@@ -181,11 +181,7 @@ export const DND35Engine = {
       return { main: 0, off: 0 };
     }
 
-    const hasFeat = char.feats?.some(
-      (f) =>
-        f.slug === "two_weapon_fighting" ||
-        f.slug === "combater-com-duas-armas",
-    );
+    const hasFeat = char.feats?.some((f) => f.slug === "two_weapon_fighting");
     const isOffLight =
       char.offHand.size === "light" || char.offHand.category === "Leve";
 
