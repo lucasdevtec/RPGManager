@@ -1,0 +1,27 @@
+[
+	{
+		"name": "Lança Longa",
+		"slug": "lanca-longa",
+		"proficiency": "Simples",
+		"category": "Duas Mãos",
+		"type": "Arma",
+		"damage_small": "1d6",
+		"damage_medium": "1d8",
+		"critical": "x3",
+		"damage_type": "Perfurante",
+		"weight": 4.5,
+		"properties": ["Haste", "Preparar contra Investida"]
+	},
+	{
+		"name": "Escudo de Corpo (Torre)",
+		"slug": "escudo-torre",
+		"proficiency": "Exótica",
+		"type": "Escudo",
+		"ac_bonus": 4,
+		"max_dex": 2,
+		"check_penalty": -10,
+		"spell_failure": 50,
+		"weight": 22.5,
+		"description": "Pode fornecer cobertura total, mas impõe -2 no ataque."
+	}
+]

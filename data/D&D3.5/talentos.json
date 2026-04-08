@@ -1,0 +1,305 @@
+[
+	{
+		"name": "Iniciativa Aprimorada",
+		"slug": "improved_initiative",
+		"type": "Geral, Guerreiro",
+		"description": "Reage mais rapidamente em combate.",
+		"prerequisites": [],
+		"benefit": "+4 de bónus em testes de Iniciativa.",
+		"mechanic": { "type": "bonus", "stat": "initiative", "value": 4 }
+	},
+	{
+		"name": "Ataque Poderoso",
+		"slug": "power_attack",
+		"type": "Geral, Guerreiro",
+		"description": "Troca precisão por dano bruto.",
+		"prerequisites": ["Força 13"],
+		"benefit": "Subtrai um valor do ataque (até o limite do BAB) e soma ao dano.",
+		"mechanic": { "type": "toggle_combat_mode", "mode": "power_attack" }
+	},
+	{
+		"name": "Fender",
+		"slug": "cleave",
+		"type": "Geral, Guerreiro",
+		"description": "Ataque extra ao derrubar um oponente.",
+		"prerequisites": ["Força 13", "Ataque Poderoso"],
+		"benefit": "Se você causar dano suficiente para derrubar um oponente (0 PV ou menos), recebe um ataque corpo a corpo imediato contra outro oponente adjacente."
+	},
+	{
+		"name": "Grande Fender",
+		"slug": "great_cleave",
+		"type": "Geral, Guerreiro",
+		"description": "Sem limite de ataques extras ao derrubar oponentes.",
+		"prerequisites": ["Força 13", "Ataque Poderoso", "Fender", "Bônus Base de Ataque +4"],
+		"benefit": "Como Fender, mas sem limite de vezes por rodada."
+	},
+	{
+		"name": "Foco em Arma",
+		"slug": "weapon_focus",
+		"type": "Geral, Guerreiro",
+		"description": "+1 no ataque com uma arma específica.",
+		"prerequisites": ["Bônus Base de Ataque +1", "Proficiência na arma"],
+		"benefit": "+1 de bónus em todas as jogadas de ataque com a arma escolhida.",
+		"multi_choice": true,
+		"choice_type": "weapon",
+		"mechanic": { "type": "conditional_bonus", "stat": "attack", "value": 1 }
+	},
+	{
+		"name": "Especialização em Arma",
+		"slug": "weapon_specialization",
+		"type": "Geral, Guerreiro",
+		"description": "+2 no dano com uma arma específica.",
+		"prerequisites": ["Guerreiro nível 4", "Foco em Arma (na mesma arma)"],
+		"benefit": "+2 de bónus em todas as jogadas de dano com a arma escolhida.",
+		"multi_choice": true,
+		"choice_type": "weapon_from_focus",
+		"mechanic": { "type": "conditional_bonus", "stat": "damage", "value": 2 }
+	},
+	{
+		"name": "Sucesso Decisivo Aprimorado",
+		"slug": "improved_critical",
+		"type": "Geral, Guerreiro",
+		"description": "Dobra a margem de ameaça da arma.",
+		"prerequisites": ["Proficiência na arma", "Bônus Base de Ataque +8"],
+		"benefit": "A margem de ameaça da arma escolhida é dobrada (ex: espada longa passa de 19-20 para 17-20).",
+		"multi_choice": true,
+		"choice_type": "weapon",
+		"mechanic": { "type": "critical_multiplier", "multiplier": 2 }
+	},
+	{
+		"name": "Esquiva",
+		"slug": "dodge",
+		"type": "Geral, Guerreiro",
+		"description": "+1 na CA contra um oponente.",
+		"prerequisites": ["Destreza 13"],
+		"benefit": "+1 de bónus de esquiva na CA contra um oponente designado.",
+		"mechanic": { "type": "situational_ac", "value": 1 }
+	},
+	{
+		"name": "Mobilidade",
+		"slug": "mobility",
+		"type": "Geral, Guerreiro",
+		"description": "+4 na CA contra ataques de oportunidade por movimento.",
+		"prerequisites": ["Destreza 13", "Esquiva"],
+		"benefit": "+4 de bónus de esquiva na CA contra ataques de oportunidade provocados quando você se move para dentro ou fora de uma área ameaçada."
+	},
+	{
+		"name": "Ataque em Movimento",
+		"slug": "spring_attack",
+		"type": "Geral, Guerreiro",
+		"description": "Move-se antes e depois do ataque.",
+		"prerequisites": ["Destreza 13", "Esquiva", "Mobilidade", "Bônus Base de Ataque +4"],
+		"benefit": "Você pode se mover antes e depois de realizar um ataque padrão, desde que o movimento total não exceda seu deslocamento."
+	},
+	{
+		"name": "Reflexos de Combate",
+		"slug": "combat_reflexes",
+		"type": "Geral, Guerreiro",
+		"description": "Ataques de oportunidade adicionais.",
+		"prerequisites": [],
+		"benefit": "Você pode realizar um número de ataques de oportunidade adicionais igual ao seu modificador de Destreza. Também pode fazer ataques de oportunidade estando surpreso."
+	},
+	{
+		"name": "Tiro Certeiro",
+		"slug": "point_blank_shot",
+		"type": "Geral, Guerreiro",
+		"description": "+1 ataque/dano até 9m.",
+		"prerequisites": [],
+		"benefit": "+1 no ataque e dano com armas de distância até 9m.",
+		"mechanic": { "type": "conditional_bonus", "condition": "range <= 9m", "value": 1 }
+	},
+	{
+		"name": "Tiro Preciso",
+		"slug": "precise_shot",
+		"type": "Geral, Guerreiro",
+		"description": "Sem penalidade ao atirar em combate corpo a corpo.",
+		"prerequisites": ["Tiro Certeiro"],
+		"benefit": "Não sofre a penalidade de -4 ao atirar em oponentes envolvidos em combate corpo a corpo."
+	},
+	{
+		"name": "Tiro Rápido",
+		"slug": "rapid_shot",
+		"type": "Geral, Guerreiro",
+		"description": "Um ataque à distância extra com penalidade.",
+		"prerequisites": ["Destreza 13", "Tiro Certeiro"],
+		"benefit": "Pode realizar um ataque à distância extra por rodada com seu bónus mais alto. Todos os ataques da rodada sofrem -2.",
+		"mechanic": { "type": "extra_attack", "penalty": -2, "context": "ranged" }
+	},
+	{
+		"name": "Tiro Múltiplo",
+		"slug": "manyshot",
+		"type": "Geral, Guerreiro",
+		"description": "Dispara duas flechas simultaneamente.",
+		"prerequisites": ["Destreza 17", "Tiro Certeiro", "Tiro Rápido", "Bônus Base de Ataque +6"],
+		"benefit": "Como ação padrão, dispara duas flechas no mesmo alvo (com penalidade -4). No BAB +11 dispara três (-6) e no BAB +16 quatro (-8)."
+	},
+	{
+		"name": "Combater com Duas Armas",
+		"slug": "two_weapon_fighting",
+		"type": "Geral, Guerreiro",
+		"description": "Reduz penalidades de duas armas.",
+		"prerequisites": ["Destreza 15"],
+		"benefit": "As penalidades por lutar com duas armas diminuem significativamente.",
+		"mechanic": { "type": "reduce_penalty", "context": "dual_wield" }
+	},
+	{
+		"name": "Combater com Duas Armas Aprimorado",
+		"slug": "improved_two_weapon_fighting",
+		"type": "Geral, Guerreiro",
+		"description": "Segundo ataque com a mão inábil.",
+		"prerequisites": ["Destreza 17", "Combater com Duas Armas", "Bônus Base de Ataque +6"],
+		"benefit": "Ganha um segundo ataque com a arma da mão inábil (com penalidade de -5)."
+	},
+	{
+		"name": "Acuidade com Arma",
+		"slug": "weapon_finesse",
+		"type": "Geral, Guerreiro",
+		"description": "Usa Destreza no ataque em vez de Força.",
+		"prerequisites": ["Bônus Base de Ataque +1"],
+		"benefit": "Com armas leves, rapieira, chicote ou corrente com cravos, usa modificador de Destreza no ataque.",
+		"mechanic": { "type": "stat_substitution", "stat_from": "str", "stat_to": "dex", "context": "attack_roll" }
+	},
+	{
+		"name": "Grande Fortitude",
+		"slug": "great_fortitude",
+		"type": "Geral",
+		"description": "Bónus em testes de Fortitude.",
+		"prerequisites": [],
+		"benefit": "+2 em todos os testes de resistência de Fortitude.",
+		"mechanic": { "type": "bonus", "stat": "fortitude", "value": 2 }
+	},
+	{
+		"name": "Reflexos Rápidos",
+		"slug": "lightning_reflexes",
+		"type": "Geral",
+		"description": "Bónus em testes de Reflexos.",
+		"prerequisites": [],
+		"benefit": "+2 em todos os testes de resistência de Reflexos.",
+		"mechanic": { "type": "bonus", "stat": "reflex", "value": 2 }
+	},
+	{
+		"name": "Vontade de Ferro",
+		"slug": "iron_will",
+		"type": "Geral",
+		"description": "Bónus em testes de Vontade.",
+		"prerequisites": [],
+		"benefit": "+2 em todos os testes de resistência de Vontade.",
+		"mechanic": { "type": "bonus", "stat": "will", "value": 2 }
+	},
+	{
+		"name": "Magia Silenciosa",
+		"slug": "silent_spell",
+		"type": "Metamágico",
+		"description": "Conjura sem componentes verbais.",
+		"prerequisites": [],
+		"benefit": "Não precisa falar para conjurar. Ocupa slot +1 nível superior."
+	},
+	{
+		"name": "Magia Sem Gestos",
+		"slug": "still_spell",
+		"type": "Metamágico",
+		"description": "Conjura sem componentes gestuais.",
+		"prerequisites": [],
+		"benefit": "Não precisa gesticular (pode usar armadura sem falha). Ocupa slot +1 nível superior."
+	},
+	{
+		"name": "Estender Magia",
+		"slug": "extend_spell",
+		"type": "Metamágico",
+		"description": "Dobra a duração da magia.",
+		"prerequisites": [],
+		"benefit": "A magia dura o dobro do tempo. Ocupa slot +1 nível superior."
+	},
+	{
+		"name": "Potencializar Magia",
+		"slug": "empower_spell",
+		"type": "Metamágico",
+		"description": "Aumenta variáveis numéricas em 50%.",
+		"prerequisites": [],
+		"benefit": "Todos os efeitos numéricos variáveis (ex: 1d6+1) são aumentados em 50%. Ocupa slot +2 níveis superior."
+	},
+	{
+		"name": "Maximizar Magia",
+		"slug": "maximize_spell",
+		"type": "Metamágico",
+		"description": "Variáveis numéricas maximizadas.",
+		"prerequisites": [],
+		"benefit": "Todos os efeitos variáveis da magia causam o resultado máximo possível. Ocupa slot +3 níveis superior."
+	},
+	{
+		"name": "Acelerar Magia",
+		"slug": "quicken_spell",
+		"type": "Metamágico",
+		"description": "Conjura como ação livre.",
+		"prerequisites": [],
+		"benefit": "Conjura a magia como uma ação livre (limite 1/rodada). Ocupa slot +4 níveis superior."
+	},
+	{
+		"name": "Escrever Pergaminho",
+		"slug": "scribe_scroll",
+		"type": "Criação de Item",
+		"description": "Cria pergaminhos mágicos.",
+		"prerequisites": ["Nível de conjurador 1"],
+		"benefit": "Pode criar pergaminhos de qualquer magia conhecida.",
+		"special": "Magos ganham no 1º nível."
+	},
+	{
+		"name": "Preparar Poção",
+		"slug": "brew_potion",
+		"type": "Criação de Item",
+		"description": "Cria poções mágicas.",
+		"prerequisites": ["Nível de conjurador 3"],
+		"benefit": "Pode criar poções de magias de até 3º nível."
+	},
+	{
+		"name": "Criar Item Maravilhoso",
+		"slug": "craft_wondrous_item",
+		"type": "Criação de Item",
+		"description": "Cria itens mágicos diversos (botas, capas, etc).",
+		"prerequisites": ["Nível de conjurador 3"],
+		"benefit": "Pode criar qualquer item maravilhoso cujos pré-requisitos atenda."
+	},
+	{
+		"name": "Criar Armas e Armaduras Mágicas",
+		"slug": "craft_magic_arms_and_armor",
+		"type": "Criação de Item",
+		"description": "Encanta armas, armaduras e escudos.",
+		"prerequisites": ["Nível de conjurador 5"],
+		"benefit": "Pode criar armas, armaduras e escudos mágicos."
+	},
+	{
+		"name": "Rastrear",
+		"slug": "track",
+		"type": "Geral",
+		"description": "Rastrear com CD > 10.",
+		"prerequisites": [],
+		"benefit": "Permite usar Sobrevivência para seguir rastros difíceis.",
+		"special": "Rangers ganham no 1º nível."
+	},
+	{
+		"name": "Ataque Desarmado Aprimorado",
+		"slug": "improved_unarmed_strike",
+		"type": "Geral, Guerreiro",
+		"description": "Ataque desarmado letal e sem AdO.",
+		"prerequisites": [],
+		"benefit": "Não provoca ataques de oportunidade ao atacar desarmado e pode causar dano letal.",
+		"special": "Monges ganham no 1º nível."
+	},
+	{
+		"name": "Agarrar Aprimorado",
+		"slug": "improved_grapple",
+		"type": "Geral, Guerreiro",
+		"description": "+4 em Agarrar e sem AdO.",
+		"prerequisites": ["Destreza 13", "Ataque Desarmado Aprimorado"],
+		"benefit": "+4 em testes de Agarrar e não provoca ataque de oportunidade ao iniciar a manobra."
+	},
+	{
+		"name": "Vitalidade",
+		"slug": "toughness",
+		"type": "Geral",
+		"description": "+3 Pontos de Vida.",
+		"prerequisites": [],
+		"benefit": "Ganha +3 PV. Pode ser pego várias vezes.",
+		"mechanic": { "type": "bonus", "stat": "hp", "value": 3 }
+	}
+]

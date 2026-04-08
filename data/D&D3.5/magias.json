@@ -1,0 +1,2345 @@
+{
+  "schemaVersion": "1.0.0",
+  "system": "dnd-3.5",
+  "language": "pt-BR",
+  "license": "SRD 3.5 / Open Game Content",
+  "spells": [
+    {
+      "id": "acid-splash",
+      "slug": "respingo-acido",
+      "name": {
+        "pt": "Respingo Ácido",
+        "original": "Acid Splash"
+      },
+      "summary": "Orbe de ácido que exige toque à distância e causa dano leve.",
+      "description": "Você arremessa um pequeno orbe de ácido contra um alvo dentro do alcance. A magia exige um ataque de toque à distância para acertar. Em caso de acerto, causa dano ácido imediato.",
+      "school": {
+        "name": "Conjuration",
+        "pt": "Conjuração",
+        "subschool": "Creation",
+        "descriptors": ["Ácido"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um alvo no alcance e faça um ataque de toque à distância.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "curto",
+        "value": "7,5 m + 1,5 m a cada 2 níveis"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Uma criatura ou objeto"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d3",
+          "damageType": ["ácido"],
+          "max": null,
+          "notes": "Requer ataque de toque à distância."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "É necessário acertar um ataque de toque à distância."
+        ],
+        "validTargets": ["Criaturas", "Objetos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "detect-magic",
+      "slug": "detectar-magia",
+      "name": {
+        "pt": "Detectar Magia",
+        "original": "Detect Magic"
+      },
+      "summary": "Revela a presença e a força de auras mágicas.",
+      "description": "Você detecta a presença de magia na área observada. Com concentração contínua, obtém mais informações sobre a quantidade, a localização e a intensidade das auras mágicas detectadas.",
+      "school": {
+        "name": "Divination",
+        "pt": "Adivinhação",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "universal",
+        "tags": ["utilidade", "detecção", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": 0,
+        "cleric": 0,
+        "druid": 0,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Concentre-se para sondar a área em cone à sua frente.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": true
+      },
+      "range": {
+        "type": "fixo",
+        "value": "Cone de 18 m"
+      },
+      "target": {
+        "type": "area",
+        "value": "Cone emanando de você"
+      },
+      "duration": {
+        "value": "Concentração, até 1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Mais rodadas de concentração revelam mais detalhes."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Barreiras podem bloquear ou ocultar a detecção, conforme a regra da magia."
+        ],
+        "validTargets": ["Área", "Auras mágicas", "Objetos", "Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "light",
+      "slug": "luz",
+      "name": {
+        "pt": "Luz",
+        "original": "Light"
+      },
+      "summary": "Faz um objeto brilhar como uma tocha.",
+      "description": "Você imbui um objeto com brilho luminoso semelhante ao de uma tocha. A luz acompanha o objeto enquanto a magia durar.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Luz"]
+      },
+      "category": {
+        "type": "universal",
+        "tags": ["utilidade", "iluminação", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": 0,
+        "cleric": 0,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Clérigo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "material": true,
+        "somatic": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Um vaga-lume ou musgo fosforescente.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Toque um objeto para fazê-lo emitir luz.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Objeto tocado"
+      },
+      "duration": {
+        "value": "10 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "A duração cresce com o nível do conjurador."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [
+          "Afeta objeto, não criatura diretamente como alvo principal."
+        ],
+        "validTargets": ["Objetos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "mage-hand",
+      "slug": "mao-magica",
+      "name": {
+        "pt": "Mão Mágica",
+        "original": "Mage Hand"
+      },
+      "summary": "Move um objeto leve à distância.",
+      "description": "Você cria uma mão espectral que manipula ou move um objeto pequeno e leve à distância, dentro do alcance da magia.",
+      "school": {
+        "name": "Transmutation",
+        "pt": "Transmutação",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["utilidade", "movimento", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": 0,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um objeto não mágico e mova-o dentro do alcance permitido.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": true
+      },
+      "range": {
+        "type": "curto",
+        "value": "7,5 m + 1,5 m a cada 2 níveis"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Um objeto não mágico de até 2,5 kg"
+      },
+      "duration": {
+        "value": "Concentração",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Somente objetos não mágicos leves.",
+          "Não é feita para ataques diretos."
+        ],
+        "validTargets": ["Objetos não mágicos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "prestidigitation",
+      "slug": "prestidigitacao",
+      "name": {
+        "pt": "Prestidigitação",
+        "original": "Prestidigitation"
+      },
+      "summary": "Realiza pequenos truques mágicos de baixo poder.",
+      "description": "Essa magia permite executar pequenos efeitos mágicos simples, como limpar, sujar, colorir, aquecer, resfriar ou criar efeitos sensoriais menores sem grande impacto mecânico direto.",
+      "school": {
+        "name": "Universal",
+        "pt": "Universal",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["utilidade", "truque", "social"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": 0,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Aplique pequenos efeitos mágicos menores em criaturas, objetos ou ambientes próximos.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "curto",
+        "value": "3 m"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Ver texto"
+      },
+      "duration": {
+        "value": "1 hora",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Sem efeitos equivalentes a magias reais mais poderosas."
+        ],
+        "validTargets": ["Objetos", "Criaturas", "Área"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "ray-of-frost",
+      "slug": "raio-de-gelo",
+      "name": {
+        "pt": "Raio de Gelo",
+        "original": "Ray of Frost"
+      },
+      "summary": "Raio gelado que causa dano de frio com toque à distância.",
+      "description": "Você dispara um raio de energia congelante em um alvo dentro do alcance. A magia exige um ataque de toque à distância.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Frio"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um alvo e faça um ataque de toque à distância.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "curto",
+        "value": "7,5 m + 1,5 m a cada 2 níveis"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Uma criatura ou objeto"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d3",
+          "damageType": ["frio"],
+          "max": null,
+          "notes": "Requer ataque de toque à distância."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "É necessário acertar um ataque de toque à distância."
+        ],
+        "validTargets": ["Criaturas", "Objetos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "read-magic",
+      "slug": "ler-magia",
+      "name": {
+        "pt": "Ler Magia",
+        "original": "Read Magic"
+      },
+      "summary": "Permite decifrar inscrições e textos mágicos.",
+      "description": "Você pode ler pergaminhos, grimórios e inscrições mágicas como se entendessem sua estrutura arcana básica.",
+      "school": {
+        "name": "Divination",
+        "pt": "Adivinhação",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["utilidade", "leitura", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Observe o texto ou item mágico que deseja interpretar.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "pessoal",
+        "value": "Você"
+      },
+      "target": {
+        "type": "pessoal",
+        "value": "Você"
+      },
+      "duration": {
+        "value": "10 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [],
+        "validTargets": ["Textos mágicos", "Pergaminhos", "Escrita arcana"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "resistance",
+      "slug": "resistencia",
+      "name": {
+        "pt": "Resistência",
+        "original": "Resistance"
+      },
+      "summary": "Concede bônus de resistência em testes de resistência.",
+      "description": "O alvo recebe um pequeno bônus em seus testes de resistência enquanto a magia durar.",
+      "school": {
+        "name": "Abjuration",
+        "pt": "Abjuração",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "universal",
+        "tags": ["buff", "proteção", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": 0,
+        "bard": 0,
+        "cleric": 0,
+        "druid": 0,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Um manto minúsculo.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Toque o alvo para conceder a proteção temporária.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura tocada"
+      },
+      "duration": {
+        "value": "1 minuto",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim (inofensiva)",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "resistência",
+            "value": "+1",
+            "appliesTo": "Testes de resistência"
+          }
+        ],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "guidance",
+      "slug": "orientacao",
+      "name": {
+        "pt": "Orientação",
+        "original": "Guidance"
+      },
+      "summary": "Concede pequeno bônus em uma única jogada do alvo.",
+      "description": "O alvo recebe inspiração momentânea, ganhando bônus de competência na próxima jogada apropriada antes do término da magia.",
+      "school": {
+        "name": "Divination",
+        "pt": "Adivinhação",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "divina",
+        "tags": ["buff", "suporte", "truque"]
+      },
+      "circle": {
+        "sorcerer_wizard": null,
+        "bard": null,
+        "cleric": 0,
+        "druid": 0,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Clérigo", "Druida"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": true,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 minuto",
+        "howToUse": "Toque o alvo e a magia ficará aguardando a próxima jogada relevante.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura tocada"
+      },
+      "duration": {
+        "value": "1 minuto ou até ser descarregada",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "competência",
+            "value": "+1",
+            "appliesTo": "Uma jogada de ataque, teste de resistência ou teste de perícia"
+          }
+        ],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Funciona em uma única jogada antes do término da duração."
+        ],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "bless",
+      "slug": "bencao",
+      "name": {
+        "pt": "Benção",
+        "original": "Bless"
+      },
+      "summary": "Aliados ganham bônus contra medo e em ataques.",
+      "description": "Aliados na área recebem moral elevado, obtendo bônus em jogadas de ataque e contra efeitos de medo enquanto permanecerem sob a magia.",
+      "school": {
+        "name": "Enchantment",
+        "pt": "Encantamento",
+        "subschool": null,
+        "descriptors": ["Compulsão", "Influência mental"]
+      },
+      "category": {
+        "type": "divina",
+        "tags": ["buff", "suporte", "moral", "área"]
+      },
+      "circle": {
+        "sorcerer_wizard": null,
+        "bard": 1,
+        "cleric": 1,
+        "druid": null,
+        "paladin": 1,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Clérigo", "Paladino"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": true,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Conjure sobre uma área contendo aliados.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "fixo",
+        "value": "Explosão de 15 m centrada em você"
+      },
+      "target": {
+        "type": "area",
+        "value": "Aliados na explosão"
+      },
+      "duration": {
+        "value": "1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim (inofensiva)",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "moral",
+            "value": "+1",
+            "appliesTo": "Jogadas de ataque"
+          },
+          {
+            "type": "moral",
+            "value": "+1",
+            "appliesTo": "Testes de resistência contra medo"
+          }
+        ],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Afeta aliados na área."],
+        "validTargets": ["Aliados"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "burning-hands",
+      "slug": "maos-flamejantes",
+      "name": {
+        "pt": "Mãos Flamejantes",
+        "original": "Burning Hands"
+      },
+      "summary": "Cone de fogo que causa dano por nível.",
+      "description": "Chamas surgem de suas mãos em forma de cone, atingindo criaturas e objetos inflamáveis na área.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Fogo"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "área"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {
+          "Fogo": 1
+        }
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Uma chama minúscula.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Projete um cone de fogo a partir de suas mãos.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "fixo",
+        "value": "Cone de 4,5 m"
+      },
+      "target": {
+        "type": "area",
+        "value": "Cone"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Reflexos metade",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d4 por nível",
+          "damageType": ["fogo"],
+          "max": "5d4",
+          "notes": "Pode incendiar materiais combustíveis."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Escala até 5d4."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [],
+        "validTargets": ["Criaturas", "Objetos inflamáveis", "Área"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "charm-person",
+      "slug": "encantar-pessoa",
+      "name": {
+        "pt": "Encantar Pessoa",
+        "original": "Charm Person"
+      },
+      "summary": "Faz um humanoide considerar você um aliado amistoso.",
+      "description": "Você altera a atitude de um humanoide, levando-o a vê-lo como um amigo confiável. Isso não concede controle absoluto, mas influencia fortemente a disposição do alvo.",
+      "school": {
+        "name": "Enchantment",
+        "pt": "Encantamento",
+        "subschool": "Charm",
+        "descriptors": ["Influência mental"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["controle", "social", "mental"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": 1,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um humanoide ao alcance.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "curto",
+        "value": "7,5 m + 1,5 m a cada 2 níveis"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Um humanoide"
+      },
+      "duration": {
+        "value": "1 hora/nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": ["Enfeitiçado socialmente"],
+        "bonus": [],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Afeta apenas humanoides."],
+        "validTargets": ["Humanoides"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "color-spray",
+      "slug": "leque-cromatico",
+      "name": {
+        "pt": "Leque Cromático",
+        "original": "Color Spray"
+      },
+      "summary": "Cone de luz colorida que atordoa, cega ou deixa inconsciente.",
+      "description": "Um leque de cores intensas surge de sua mão e afeta criaturas no cone, com efeitos que variam conforme os Dados de Vida dos alvos.",
+      "school": {
+        "name": "Illusion",
+        "pt": "Ilusão",
+        "subschool": "Pattern",
+        "descriptors": ["Influência mental"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["controle", "área", "incapacitação"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": 1,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Pó ou areia colorida, vermelha, amarela e azul.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Projete o cone em direção aos alvos.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "fixo",
+        "value": "Cone de 4,5 m"
+      },
+      "target": {
+        "type": "area",
+        "value": "Cone"
+      },
+      "duration": {
+        "value": "Especial",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": ["Cego", "Atordoado", "Inconsciente"],
+        "bonus": [],
+        "scaling": "Os efeitos dependem dos Dados de Vida do alvo."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": ["Criaturas com mais DV são menos afetadas."],
+        "validTargets": ["Criaturas em cone"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "cure-light-wounds",
+      "slug": "curar-ferimentos-leves",
+      "name": {
+        "pt": "Curar Ferimentos Leves",
+        "original": "Cure Light Wounds"
+      },
+      "summary": "Cura criatura viva tocada ou causa dano em morto-vivo.",
+      "description": "Ao tocar uma criatura viva, você canaliza energia positiva para restaurar ferimentos. Contra mortos-vivos, a mesma energia causa dano.",
+      "school": {
+        "name": "Conjuration",
+        "pt": "Conjuração",
+        "subschool": "Healing",
+        "descriptors": []
+      },
+      "category": {
+        "type": "divina",
+        "tags": ["cura", "suporte", "ofensiva"]
+      },
+      "circle": {
+        "sorcerer_wizard": null,
+        "bard": 1,
+        "cleric": 1,
+        "druid": 1,
+        "paladin": 1,
+        "ranger": 2,
+        "domains": {
+          "Cura": 1
+        }
+      },
+      "casters": ["Bardo", "Clérigo", "Druida", "Paladino", "Patrulheiro"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Toque o alvo para curar ou atingir um morto-vivo.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura tocada"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade parcial",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim (inofensiva); ver texto",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": true,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d8 + 1 por nível",
+          "damageType": ["energia positiva"],
+          "max": "+5",
+          "notes": "Contra mortos-vivos, a magia causa esse dano em vez de curar."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Escala até bônus máximo de +5."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Criaturas vivas são curadas; mortos-vivos sofrem dano."
+        ],
+        "validTargets": ["Criaturas vivas", "Mortos-vivos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "mage-armor",
+      "slug": "armadura-mageca",
+      "name": {
+        "pt": "Armadura Arcana",
+        "original": "Mage Armor"
+      },
+      "summary": "Campo invisível concede bônus de armadura.",
+      "description": "Um campo de força invisível protege o alvo, concedendo bônus de armadura contra ataques físicos e também contra toque de criaturas incorpóreas, por ser um efeito de força.",
+      "school": {
+        "name": "Conjuration",
+        "pt": "Conjuração",
+        "subschool": "Creation",
+        "descriptors": ["Força"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["buff", "proteção", "defesa"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Um pedaço de couro curado.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Conceda proteção ao alvo tocado.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura tocada"
+      },
+      "duration": {
+        "value": "1 hora/nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula (inofensiva)",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "armadura",
+            "value": "+4",
+            "appliesTo": "CA"
+          }
+        ],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "magic-missile",
+      "slug": "misseis-magicos",
+      "name": {
+        "pt": "Mísseis Mágicos",
+        "original": "Magic Missile"
+      },
+      "summary": "Projéteis de força que acertam automaticamente.",
+      "description": "Você cria projéteis de energia mágica que atingem automaticamente os alvos. Os mísseis podem ser divididos entre vários inimigos dentro dos limites da magia.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Força"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "força"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um ou mais alvos válidos dentro do alcance.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "medio",
+        "value": "30 m + 3 m por nível"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Até cinco criaturas, com no máximo 4,5 m entre si"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d4+1 por míssil",
+          "damageType": ["força"],
+          "max": "5 mísseis",
+          "notes": "1 míssil no 1º nível e +1 míssil a cada 2 níveis acima do 1º, até 5."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Escala em número de mísseis."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Necessita linha de efeito até o alvo."],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "shield",
+      "slug": "escudo",
+      "name": {
+        "pt": "Escudo",
+        "original": "Shield"
+      },
+      "summary": "Disco invisível de força concede bônus de escudo e bloqueia mísseis mágicos.",
+      "description": "Um disco de força flutua diante de você, fornecendo proteção contra ataques e anulando Mísseis Mágicos lançados contra seu corpo.",
+      "school": {
+        "name": "Abjuration",
+        "pt": "Abjuração",
+        "subschool": null,
+        "descriptors": ["Força"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["buff", "proteção", "defesa"]
+      },
+      "circle": {
+        "sorcerer_wizard": 1,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Conjure sobre si mesmo.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "pessoal",
+        "value": "Pessoal"
+      },
+      "target": {
+        "type": "pessoal",
+        "value": "Você"
+      },
+      "duration": {
+        "value": "1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula (inofensiva)",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": "Bloqueia Mísseis Mágicos."
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "escudo",
+            "value": "+4",
+            "appliesTo": "CA"
+          }
+        ],
+        "scaling": null
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Afeta apenas o conjurador."],
+        "validTargets": ["Você"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "invisibility",
+      "slug": "invisibilidade",
+      "name": {
+        "pt": "Invisibilidade",
+        "original": "Invisibility"
+      },
+      "summary": "Torna criatura ou objeto invisível temporariamente.",
+      "description": "O alvo desaparece da visão normal. A invisibilidade termina se o alvo atacar, dependendo das regras da magia.",
+      "school": {
+        "name": "Illusion",
+        "pt": "Ilusão",
+        "subschool": "Glamer",
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["utilidade", "furtividade", "buff"]
+      },
+      "circle": {
+        "sorcerer_wizard": 2,
+        "bard": 2,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Bardo", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Um cílio envolto em goma arábica.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Toque o alvo para torná-lo invisível.",
+        "passive": false,
+        "dismissible": true,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura ou objeto de até 45 kg/nível"
+      },
+      "duration": {
+        "value": "1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula (inofensiva) ou Vontade anula (objeto)",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim (inofensiva) ou Sim (objeto)",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": ["Invisível"],
+        "bonus": [],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": ["Termina se o alvo atacar."],
+        "validTargets": ["Criaturas", "Objetos"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "mirror-image",
+      "slug": "imagem-espelhada",
+      "name": {
+        "pt": "Imagem Espelhada",
+        "original": "Mirror Image"
+      },
+      "summary": "Cria duplicatas ilusórias para confundir ataques.",
+      "description": "Várias imagens ilusórias suas surgem ao redor, tornando difícil determinar qual é o verdadeiro conjurador.",
+      "school": {
+        "name": "Illusion",
+        "pt": "Ilusão",
+        "subschool": "Figment",
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["buff", "defesa", "ilusão"]
+      },
+      "circle": {
+        "sorcerer_wizard": 2,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Conjure sobre si mesmo para criar cópias ilusórias móveis.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "pessoal",
+        "value": "Pessoal"
+      },
+      "target": {
+        "type": "pessoal",
+        "value": "Você"
+      },
+      "duration": {
+        "value": "1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": [],
+        "bonus": [
+          {
+            "type": "defensivo",
+            "value": "Especial",
+            "appliesTo": "Chance de acertar uma imagem em vez do conjurador"
+          }
+        ],
+        "scaling": "O número de imagens aumenta com o nível."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Afeta apenas o conjurador."],
+        "validTargets": ["Você"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "scorching-ray",
+      "slug": "raio-abrasador",
+      "name": {
+        "pt": "Raio Abrasador",
+        "original": "Scorching Ray"
+      },
+      "summary": "Dispara um ou mais raios de fogo que exigem toque à distância.",
+      "description": "Você dispara raios de fogo concentrado contra alvos dentro do alcance. Cada raio exige ataque de toque à distância separado.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Fogo"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "raio"]
+      },
+      "circle": {
+        "sorcerer_wizard": 2,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {
+          "Sol": 2
+        }
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um ou mais alvos e faça ataques de toque à distância para cada raio.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "curto",
+        "value": "7,5 m + 1,5 m a cada 2 níveis"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Uma ou mais criaturas"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "4d6 por raio",
+          "damageType": ["fogo"],
+          "max": "3 raios",
+          "notes": "1 raio até nível 6, 2 raios no nível 7, 3 raios no nível 11."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Escala em número de raios."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": ["Cada raio requer ataque de toque à distância."],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "web",
+      "slug": "teia",
+      "name": {
+        "pt": "Teia",
+        "original": "Web"
+      },
+      "summary": "Preenche área com teias espessas que dificultam movimento e prendem criaturas.",
+      "description": "A área é coberta por camadas de teia pegajosa. Criaturas na área podem ficar presas ou ter movimento severamente limitado.",
+      "school": {
+        "name": "Conjuration",
+        "pt": "Conjuração",
+        "subschool": "Creation",
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["controle", "área", "restrição"]
+      },
+      "circle": {
+        "sorcerer_wizard": 2,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {
+          "Aranha": 2
+        }
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Um pedaço de teia de aranha.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha a área onde as teias irão surgir.",
+        "passive": false,
+        "dismissible": true,
+        "concentration": false
+      },
+      "range": {
+        "type": "medio",
+        "value": "30 m + 3 m por nível"
+      },
+      "target": {
+        "type": "area",
+        "value": "Espalhamento de 6 m de raio"
+      },
+      "duration": {
+        "value": "10 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Reflexos anula; ver texto",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": "As teias podem ser queimadas, causando efeitos colaterais conforme a regra."
+        },
+        "conditions": ["Preso", "Movimento reduzido"],
+        "bonus": [],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [
+          "Precisa de pontos de ancoragem adequados para efeito ideal."
+        ],
+        "validTargets": ["Área", "Criaturas na área"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "dispel-magic",
+      "slug": "dissipar-magia",
+      "name": {
+        "pt": "Dissipar Magia",
+        "original": "Dispel Magic"
+      },
+      "summary": "Remove ou suprime efeitos mágicos.",
+      "description": "Você tenta encerrar efeitos mágicos ativos, dissipar magias em uma criatura, objeto ou área, ou neutralizar uma contra outra em certas situações.",
+      "school": {
+        "name": "Abjuration",
+        "pt": "Abjuração",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "universal",
+        "tags": ["utilidade", "antimagia", "defesa"]
+      },
+      "circle": {
+        "sorcerer_wizard": 3,
+        "bard": 3,
+        "cleric": 3,
+        "druid": 4,
+        "paladin": null,
+        "ranger": null,
+        "domains": {
+          "Magia": 3
+        }
+      },
+      "casters": ["Bardo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": false,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": null,
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha criatura, objeto ou área para tentar dissipar efeitos ativos.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "medio",
+        "value": "30 m + 3 m por nível"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Uma magia, criatura ou objeto; ou explosão de 6 m"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Nenhum",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Não",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": "Usa teste de dissipação contra efeitos em andamento."
+        },
+        "conditions": ["Suprime ou encerra efeitos mágicos"],
+        "bonus": [],
+        "scaling": "A eficácia depende do teste de dissipação."
+      },
+      "requirements": {
+        "preRequisites": [],
+        "restrictions": [
+          "Nem todo efeito é automaticamente removido; depende do teste apropriado."
+        ],
+        "validTargets": ["Magias ativas", "Criaturas", "Objetos", "Área"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "fireball",
+      "slug": "bola-de-fogo",
+      "name": {
+        "pt": "Bola de Fogo",
+        "original": "Fireball"
+      },
+      "summary": "Explosão de fogo em área com dano por nível.",
+      "description": "Você faz um ponto no alcance explodir em uma poderosa detonação flamejante que atinge criaturas e objetos desassistidos na área.",
+      "school": {
+        "name": "Evocation",
+        "pt": "Evocação",
+        "subschool": null,
+        "descriptors": ["Fogo"]
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["dano", "ofensiva", "área"]
+      },
+      "circle": {
+        "sorcerer_wizard": 3,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {}
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Uma pequena bolinha de guano de morcego e enxofre.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Escolha um ponto dentro do alcance para a detonação.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "longo",
+        "value": "120 m + 12 m por nível"
+      },
+      "target": {
+        "type": "area",
+        "value": "Explosão de 6 m de raio"
+      },
+      "duration": {
+        "value": "Instantânea",
+        "timed": false,
+        "instantaneous": true,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Reflexos metade",
+        "harmless": false
+      },
+      "spellResistance": {
+        "value": "Sim",
+        "harmless": false
+      },
+      "combat": {
+        "offensive": true,
+        "healing": false,
+        "damage": {
+          "hasDamage": true,
+          "formula": "1d6 por nível",
+          "damageType": ["fogo"],
+          "max": "10d6",
+          "notes": "Objetos desassistidos também sofrem dano."
+        },
+        "conditions": [],
+        "bonus": [],
+        "scaling": "Escala até 10d6."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material necessário."],
+        "restrictions": ["Necessita linha de efeito até o ponto de origem."],
+        "validTargets": ["Criaturas", "Objetos desassistidos", "Área"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    },
+    {
+      "id": "fly",
+      "slug": "voo",
+      "name": {
+        "pt": "Voo",
+        "original": "Fly"
+      },
+      "summary": "Permite ao alvo voar com boa manobrabilidade.",
+      "description": "O alvo ganha deslocamento de voo temporário, podendo se mover pelo ar com boa manobrabilidade segundo as regras da magia.",
+      "school": {
+        "name": "Transmutation",
+        "pt": "Transmutação",
+        "subschool": null,
+        "descriptors": []
+      },
+      "category": {
+        "type": "arcana",
+        "tags": ["movimento", "buff", "mobilidade"]
+      },
+      "circle": {
+        "sorcerer_wizard": 3,
+        "bard": null,
+        "cleric": null,
+        "druid": null,
+        "paladin": null,
+        "ranger": null,
+        "domains": {
+          "Ar": 3,
+          "Viagem": 3
+        }
+      },
+      "casters": ["Feiticeiro", "Mago"],
+      "components": {
+        "verbal": true,
+        "somatic": true,
+        "material": true,
+        "focus": false,
+        "divineFocus": false,
+        "xp": false,
+        "materialDescription": "Uma pena da asa de qualquer pássaro.",
+        "focusDescription": null,
+        "xpCost": null
+      },
+      "casting": {
+        "time": "1 ação padrão",
+        "howToUse": "Toque o alvo para conceder deslocamento de voo.",
+        "passive": false,
+        "dismissible": false,
+        "concentration": false
+      },
+      "range": {
+        "type": "toque",
+        "value": "Toque"
+      },
+      "target": {
+        "type": "alvo",
+        "value": "Criatura tocada"
+      },
+      "duration": {
+        "value": "1 min./nível",
+        "timed": true,
+        "instantaneous": false,
+        "permanent": false
+      },
+      "savingThrow": {
+        "type": "Vontade anula (inofensiva)",
+        "harmless": true
+      },
+      "spellResistance": {
+        "value": "Sim (inofensiva)",
+        "harmless": true
+      },
+      "combat": {
+        "offensive": false,
+        "healing": false,
+        "damage": {
+          "hasDamage": false,
+          "formula": null,
+          "damageType": [],
+          "max": null,
+          "notes": null
+        },
+        "conditions": ["Voo"],
+        "bonus": [
+          {
+            "type": "movimento",
+            "value": "18 m",
+            "appliesTo": "Deslocamento de voo"
+          }
+        ],
+        "scaling": "A duração cresce com o nível."
+      },
+      "requirements": {
+        "preRequisites": ["Componente material simples."],
+        "restrictions": [],
+        "validTargets": ["Criaturas"]
+      },
+      "meta": {
+        "source": "SRD 3.5",
+        "sourceType": "SRD",
+        "page": null
+      }
+    }
+  ]
+}

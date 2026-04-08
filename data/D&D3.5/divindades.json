@@ -1,0 +1,154 @@
+[
+	{
+		"name": "Heironeous",
+		"title": "Deus do Heroísmo",
+		"alignment": "Leal e Bom",
+		"domains": ["Bem", "Ordem", "Guerra"],
+		"typical_worshippers": ["Paladinos", "Guerreiros", "Monges"],
+		"favored_weapon": "Espada Longa"
+	},
+	{
+		"name": "Morandin",
+		"title": "Deus dos Anões",
+		"alignment": "Leal e Bom",
+		"domains": ["Terra", "Bem", "Ordem", "Proteção"],
+		"typical_worshippers": ["Anões"],
+		"favored_weapon": "Martelo de Guerra"
+	},
+	{
+		"name": "Yondalla",
+		"title": "Deusa dos Halflings",
+		"alignment": "Leal e Bom",
+		"domains": ["Bem", "Ordem", "Proteção"],
+		"typical_worshippers": ["Halflings"],
+		"favored_weapon": "Espada Curta"
+	},
+	{
+		"name": "Ehlonna",
+		"title": "Deusa das Florestas",
+		"alignment": "Neutro e Bom",
+		"domains": ["Animal", "Bem", "Planta", "Sol"],
+		"typical_worshippers": ["Elfos", "Gnomos", "Meio-elfos", "Halflings", "Rangers", "Druidas"],
+		"favored_weapon": "Espada Longa"
+	},
+	{
+		"name": "Garl Glittergold",
+		"title": "Deus dos Gnomos",
+		"alignment": "Neutro e Bom",
+		"domains": ["Bem", "Proteção", "Enganação"],
+		"typical_worshippers": ["Gnomos"],
+		"favored_weapon": "Machado de Batalha"
+	},
+	{
+		"name": "Pelor",
+		"title": "Deus do Sol",
+		"alignment": "Neutro e Bom",
+		"domains": ["Bem", "Cura", "Força", "Sol"],
+		"typical_worshippers": ["Rangers", "Bardos"],
+		"favored_weapon": "Maça Pesada"
+	},
+	{
+		"name": "Corellon Larethian",
+		"title": "Deus dos Elfos",
+		"alignment": "Caótico e Bom",
+		"domains": ["Caos", "Bem", "Proteção", "Guerra"],
+		"typical_worshippers": ["Elfos", "Meio-elfos", "Bardos"],
+		"favored_weapon": "Espada Longa"
+	},
+	{
+		"name": "Kord",
+		"title": "Deus da Força",
+		"alignment": "Caótico e Bom",
+		"domains": ["Caos", "Bem", "Sorte", "Força"],
+		"typical_worshippers": ["Guerreiros", "Bárbaros", "Ladinos", "Atletas"],
+		"favored_weapon": "Espada Larga"
+	},
+	{
+		"name": "Wee Jas",
+		"title": "Deusa da Morte e da Magia",
+		"alignment": "Leal e Neutro",
+		"domains": ["Morte", "Ordem", "Magia"],
+		"typical_worshippers": ["Magos", "Necromantes", "Feiticeiros"],
+		"favored_weapon": "Adaga"
+	},
+	{
+		"name": "St. Cuthbert",
+		"title": "Deus da Retribuição",
+		"alignment": "Leal e Neutro",
+		"domains": ["Destruição", "Ordem", "Proteção", "Força"],
+		"typical_worshippers": ["Guerreiros", "Monges", "Soldados"],
+		"favored_weapon": "Maça"
+	},
+	{
+		"name": "Boccob",
+		"title": "Deus da Magia",
+		"alignment": "Neutro",
+		"domains": ["Conhecimento", "Magia", "Enganação"],
+		"typical_worshippers": ["Magos", "Feiticeiros", "Sábios"],
+		"favored_weapon": "Bordão"
+	},
+	{
+		"name": "Fharlanghn",
+		"title": "Deus das Estradas",
+		"alignment": "Neutro",
+		"domains": ["Sorte", "Proteção", "Viagem"],
+		"typical_worshippers": ["Bardos", "Aventureiros", "Mercadores"],
+		"favored_weapon": "Bordão"
+	},
+	{
+		"name": "Obad-Hai",
+		"title": "Deus da Natureza",
+		"alignment": "Neutro",
+		"domains": ["Ar", "Animal", "Terra", "Fogo", "Planta", "Água"],
+		"typical_worshippers": ["Druidas", "Bárbaros", "Rangers"],
+		"favored_weapon": "Bordão"
+	},
+	{
+		"name": "Olidammara",
+		"title": "Deus dos Ladrões",
+		"alignment": "Caótico e Neutro",
+		"domains": ["Caos", "Sorte", "Enganação"],
+		"typical_worshippers": ["Ladinos", "Bardos", "Ladrões"],
+		"favored_weapon": "Rapieira"
+	},
+	{
+		"name": "Hextor",
+		"title": "Deus da Tirania",
+		"alignment": "Leal e Mau",
+		"domains": ["Destruição", "Mal", "Ordem", "Guerra"],
+		"typical_worshippers": ["Guerreiros Malignos", "Monges"],
+		"favored_weapon": "Mangual"
+	},
+	{
+		"name": "Nerull",
+		"title": "Deus da Morte",
+		"alignment": "Neutro e Mau",
+		"domains": ["Morte", "Mal", "Enganação", "Guerra"],
+		"typical_worshippers": ["Necromantes", "Ladinos Malignos"],
+		"favored_weapon": "Foice"
+	},
+	{
+		"name": "Vecna",
+		"title": "Deus dos Segredos",
+		"alignment": "Neutro e Mau",
+		"domains": ["Mal", "Conhecimento", "Magia"],
+		"typical_worshippers": ["Magos", "Feiticeiros", "Ladinos", "Espiões"],
+		"favored_weapon": "Adaga"
+	},
+	{
+		"name": "Erythnul",
+		"title": "Deus da Matança",
+		"alignment": "Caótico e Mau",
+		"domains": ["Caos", "Mal", "Enganação", "Guerra"],
+		"typical_worshippers": ["Guerreiros", "Bárbaros", "Ladinos Malignos"],
+		"favored_weapon": "Maça-Estrela"
+	},
+	{
+		"name": "Gruumsh",
+		"title": "Deus dos Orcs",
+		"alignment": "Caótico e Mau",
+		"domains": ["Caos", "Mal", "Força", "Guerra"],
+		"typical_worshippers": ["Meio-orcs", "Orcs"],
+		"favored_weapon": "Lança"
+	}
+]

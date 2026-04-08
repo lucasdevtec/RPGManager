@@ -1,0 +1,2273 @@
+[
+	{
+		"name": "Bárbaro",
+		"slug": "barbarian",
+		"hit_die": "d12",
+		"alignment_restriction": "Qualquer não-leal",
+		"skill_points": {
+			"base": 4,
+			"modifier": "int"
+		},
+		"class_skills": ["Adestrar Animais", "Cavalgar", "Escalar", "Intimidação", "Natação", "Ofícios", "Ouvir", "Saltar", "Sobrevivência"],
+		"proficiencies": {
+			"weapons": ["Simples", "Marciais"],
+			"armors": ["Leves", "Médias"],
+			"shields": ["Todos (exceto escudo de corpo)"]
+		},
+		"class_features": {
+			"rage": {
+				"name": "Fúria",
+				"effects": {
+					"str_bonus": 4,
+					"con_bonus": 4,
+					"will_save_moral": 2,
+					"ac_penalty": -2,
+					"duration": "3 + modificador de Constituição (novo)"
+				},
+				"restrictions": ["Sem perícias de Car/Des/Int (exceto exceções)", "Sem conjuração"]
+			},
+			"fast_movement": {
+				"name": "Movimento Rápido",
+				"effect": "+3m de deslocamento",
+				"condition": "Sem armadura pesada ou carga pesada"
+			},
+			"uncanny_dodge": {
+				"name": "Esquiva Sobrenatural",
+				"effect": "Mantém bônus de Des na CA mesmo surpreso ou contra invisíveis"
+			},
+			"illiteracy": {
+				"name": "Analfabetismo",
+				"effect": "Não sabe ler/escrever. Custa 2 pontos de perícia para remover."
+			}
+		},
+		"progression": [
+			{ "level": 1, "bab": "+1", "fort": "+2", "ref": "+0", "will": "+0", "special": ["Movimento Rápido", "Analfabetismo", "Fúria 1/dia"] },
+			{ "level": 2, "bab": "+2", "fort": "+3", "ref": "+0", "will": "+0", "special": ["Esquiva Sobrenatural"] },
+			{ "level": 3, "bab": "+3", "fort": "+3", "ref": "+1", "will": "+1", "special": ["Sentir Armadilhas +1"] },
+			{ "level": 4, "bab": "+4", "fort": "+4", "ref": "+1", "will": "+1", "special": ["Fúria 2/dia"] },
+			{ "level": 5, "bab": "+5", "fort": "+4", "ref": "+1", "will": "+1", "special": ["Esquiva Sobrenatural Aprimorada"] },
+			{ "level": 6, "bab": "+6/+1", "fort": "+5", "ref": "+2", "will": "+2", "special": ["Sentir Armadilhas +2"] },
+			{ "level": 7, "bab": "+7/+2", "fort": "+5", "ref": "+2", "will": "+2", "special": ["Redução de Dano 1/-"] },
+			{ "level": 8, "bab": "+8/+3", "fort": "+6", "ref": "+2", "will": "+2", "special": ["Fúria 3/dia"] },
+			{ "level": 9, "bab": "+9/+4", "fort": "+6", "ref": "+3", "will": "+3", "special": ["Sentir Armadilhas +3"] },
+			{ "level": 10, "bab": "+10/+5", "fort": "+7", "ref": "+3", "will": "+3", "special": ["Redução de Dano 2/-"] },
+			{ "level": 11, "bab": "+11/+6/+1", "fort": "+7", "ref": "+3", "will": "+3", "special": ["Fúria Maior"] },
+			{ "level": 12, "bab": "+12/+7/+2", "fort": "+8", "ref": "+4", "will": "+4", "special": ["Fúria 4/dia", "Sentir Armadilhas +4"] },
+			{ "level": 13, "bab": "+13/+8/+3", "fort": "+8", "ref": "+4", "will": "+4", "special": ["Redução de Dano 3/-"] },
+			{ "level": 14, "bab": "+14/+9/+4", "fort": "+9", "ref": "+4", "will": "+4", "special": ["Vontade Inabalável"] },
+			{ "level": 15, "bab": "+15/+10/+5", "fort": "+9", "ref": "+5", "will": "+5", "special": ["Sentir Armadilhas +5"] },
+			{ "level": 16, "bab": "+16/+11/+6/+1", "fort": "+10", "ref": "+5", "will": "+5", "special": ["Redução de Dano 4/-", "Fúria 5/dia"] },
+			{ "level": 17, "bab": "+17/+12/+7/+2", "fort": "+10", "ref": "+5", "will": "+5", "special": ["Fúria Incansável"] },
+			{ "level": 18, "bab": "+18/+13/+8/+3", "fort": "+11", "ref": "+6", "will": "+6", "special": ["Sentir Armadilhas +6"] },
+			{ "level": 19, "bab": "+19/+14/+9/+4", "fort": "+11", "ref": "+6", "will": "+6", "special": ["Redução de Dano 5/-"] },
+			{ "level": 20, "bab": "+20/+15/+10/+5", "fort": "+12", "ref": "+6", "will": "+6", "special": ["Fúria Poderosa", "Fúria 6/dia"] }
+		]
+	},
+	{
+		"name": "Clérigo",
+		"slug": "cleric",
+		"hit_die": "d8",
+		"alignment_restriction": "A mesma da divindade ou um passo de diferença (exceto St. Cuthbert que exige Leal). Não pode ser Neutro autêntico se a divindade não for.",
+		"skill_points": {
+			"base": 2,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Concentração",
+			"Conhecimento (arcano)",
+			"Conhecimento (história)",
+			"Conhecimento (planos)",
+			"Conhecimento (religião)",
+			"Cura",
+			"Diplomacia",
+			"Identificar Magia",
+			"Ofícios",
+			"Profissão"
+		],
+		"proficiencies": {
+			"weapons": ["Simples", "Arma Predileta da Divindade"],
+			"armors": ["Leves", "Médias", "Pesadas"],
+			"shields": ["Todos (exceto escudo de corpo)"]
+		},
+		"class_features": {
+			"spells": {
+				"name": "Magias Divinas",
+				"stat": "sabedoria",
+				"preparation": "daily_meditation",
+				"condition": "Sabedoria deve ser 10 + nível da magia."
+			},
+			"domains": {
+				"name": "Domínios",
+				"count": 2,
+				"effect": "Concede poderes especiais e +1 slot de magia por nível de magia (do 1º ao 9º)."
+			},
+			"turn_undead": {
+				"name": "Expulsar/Fascinar Mortos-vivos",
+				"uses_per_day": "3 + modificador de Carisma",
+				"effect": "Clérigos Bons expulsam/destroem. Clérigos Maus fascinam/comandam. Neutros escolhem na criação."
+			},
+			"spontaneous_casting": {
+				"name": "Conversão Espontânea",
+				"effect": "Trocar magia preparada por 'Curar' (Bons) ou 'Infligir' (Maus).",
+				"condition": "Não se aplica a magias de domínio."
+			},
+			"aura": {
+				"name": "Aura",
+				"effect": "Emite aura correspondente à tendência da divindade (detectável por Detectar o Mal/Bem/Caos/Ordem)."
+			},
+			"bonus_languages": {
+				"name": "Idiomas de Clérigo",
+				"options": ["Abissal", "Celestial", "Infernal"]
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+2",
+				"ref": "+0",
+				"will": "+2",
+				"special": ["Expulsar Mortos-vivos", "Domínios"],
+				"spells_per_day": { "0": 3, "1": "1+1" }
+			},
+			{ "level": 2, "bab": "+1", "fort": "+3", "ref": "+0", "will": "+3", "special": [], "spells_per_day": { "0": 4, "1": "2+1" } },
+			{ "level": 3, "bab": "+2", "fort": "+3", "ref": "+1", "will": "+3", "special": [], "spells_per_day": { "0": 4, "1": "2+1", "2": "1+1" } },
+			{ "level": 4, "bab": "+3", "fort": "+4", "ref": "+1", "will": "+4", "special": [], "spells_per_day": { "0": 5, "1": "3+1", "2": "2+1" } },
+			{
+				"level": 5,
+				"bab": "+3",
+				"fort": "+4",
+				"ref": "+1",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "0": 5, "1": "3+1", "2": "2+1", "3": "1+1" }
+			},
+			{
+				"level": 6,
+				"bab": "+4",
+				"fort": "+5",
+				"ref": "+2",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 5, "1": "3+1", "2": "3+1", "3": "2+1" }
+			},
+			{
+				"level": 7,
+				"bab": "+5",
+				"fort": "+5",
+				"ref": "+2",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "4+1", "2": "3+1", "3": "2+1", "4": "1+1" }
+			},
+			{
+				"level": 8,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+2",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "4+1", "2": "3+1", "3": "3+1", "4": "2+1" }
+			},
+			{
+				"level": 9,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+3",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "4+1", "2": "4+1", "3": "3+1", "4": "2+1", "5": "1+1" }
+			},
+			{
+				"level": 10,
+				"bab": "+7/+2",
+				"fort": "+7",
+				"ref": "+3",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "4+1", "2": "4+1", "3": "3+1", "4": "3+1", "5": "2+1" }
+			},
+			{
+				"level": 11,
+				"bab": "+8/+3",
+				"fort": "+7",
+				"ref": "+3",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "4+1", "3": "4+1", "4": "3+1", "5": "2+1", "6": "1+1" }
+			},
+			{
+				"level": 12,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+4",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "4+1", "3": "4+1", "4": "3+1", "5": "3+1", "6": "2+1" }
+			},
+			{
+				"level": 13,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+4",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "4+1", "4": "4+1", "5": "3+1", "6": "2+1", "7": "1+1" }
+			},
+			{
+				"level": 14,
+				"bab": "+10/+5",
+				"fort": "+9",
+				"ref": "+4",
+				"will": "+9",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "4+1", "4": "4+1", "5": "3+1", "6": "3+1", "7": "2+1" }
+			},
+			{
+				"level": 15,
+				"bab": "+11/+6/+1",
+				"fort": "+9",
+				"ref": "+5",
+				"will": "+9",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "4+1", "5": "4+1", "6": "3+1", "7": "2+1", "8": "1+1" }
+			},
+			{
+				"level": 16,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "4+1", "5": "4+1", "6": "3+1", "7": "3+1", "8": "2+1" }
+			},
+			{
+				"level": 17,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "5+1", "5": "4+1", "6": "4+1", "7": "3+1", "8": "2+1", "9": "1+1" }
+			},
+			{
+				"level": 18,
+				"bab": "+13/+8/+3",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "5+1", "5": "4+1", "6": "4+1", "7": "3+1", "8": "3+1", "9": "2+1" }
+			},
+			{
+				"level": 19,
+				"bab": "+14/+9/+4",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "5+1", "5": "5+1", "6": "4+1", "7": "4+1", "8": "3+1", "9": "3+1" }
+			},
+			{
+				"level": 20,
+				"bab": "+15/+10/+5",
+				"fort": "+12",
+				"ref": "+6",
+				"will": "+12",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": "5+1", "2": "5+1", "3": "5+1", "4": "5+1", "5": "5+1", "6": "4+1", "7": "4+1", "8": "4+1", "9": "4+1" }
+			}
+		]
+	},
+	{
+		"name": "Druida",
+		"slug": "druid",
+		"hit_die": "d8",
+		"alignment_restriction": "Deve possuir algum aspecto Neutro (NB, LN, N, CN ou NM).",
+		"skill_points": {
+			"base": 4,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Adestrar Animais",
+			"Cavalgar",
+			"Concentração",
+			"Conhecimento (natureza)",
+			"Cura",
+			"Diplomacia",
+			"Identificar Magia",
+			"Natação",
+			"Observar",
+			"Ofícios",
+			"Ouvir",
+			"Profissão",
+			"Sobrevivência"
+		],
+		"proficiencies": {
+			"weapons": ["Adaga", "Bordão", "Cimitarra", "Clava", "Dardo", "Foice", "Funda", "Lança", "Lança curta", "Ataques Naturais (em forma selvagem)"],
+			"armors": ["Leves (não-metálicas)", "Médias (não-metálicas)"],
+			"shields": ["Todos (exceto corpo, apenas madeira)"]
+		},
+		"class_features": {
+			"druidic_oath": {
+				"name": "Juramento Druídico",
+				"effect": "Proibido usar armaduras ou escudos de metal. Se violado, perde magias e habilidades por 24h."
+			},
+			"spells": {
+				"name": "Magias Divinas",
+				"stat": "sabedoria",
+				"preparation": "daily_meditation",
+				"condition": "Sabedoria deve ser 10 + nível da magia."
+			},
+			"animal_companion": {
+				"name": "Companheiro Animal",
+				"effect": "Vínculo com um animal leal que evolui com o druida. (Ver regras de Companheiro Animal)."
+			},
+			"nature_sense": {
+				"name": "Senso da Natureza",
+				"effect": "+2 em Conhecimento (natureza) e Sobrevivência.",
+				"bonuses": [
+					{ "skill": "knowledge_nature", "value": 2 },
+					{ "skill": "survival", "value": 2 }
+				]
+			},
+			"wild_empathy": {
+				"name": "Empatia com a Natureza",
+				"effect": "Melhorar atitude de animais. Teste: 1d20 + nível de druida + mod. Carisma."
+			},
+			"woodland_stride": {
+				"name": "Caminho da Floresta",
+				"effect": "Deslocamento normal em terrenos naturais difíceis (arbustos, espinhos) sem sofrer dano."
+			},
+			"trackless_step": {
+				"name": "Rastro Invisível",
+				"effect": "Não deixa rastros em terrenos naturais e não pode ser rastreado."
+			},
+			"resist_natures_lure": {
+				"name": "Resistir à Tentação da Natureza",
+				"effect": "+4 em testes de resistência contra habilidades de fadas.",
+				"bonuses": { "save": "all", "value": 4, "condition": "contra fadas" }
+			},
+			"wild_shape": {
+				"name": "Forma Selvagem",
+				"effect": "Transformar-se em animal (e posteriormente plantas/elementais). Recupera PV como descanso noturno ao transformar."
+			},
+			"venom_immunity": {
+				"name": "Imunidade a Venenos",
+				"effect": "Imune a todos os tipos de veneno."
+			},
+			"timeless_body": {
+				"name": "Corpo Atemporal",
+				"effect": "Não sofre penalidades de atributos por velhice (mas ainda morre na hora certa)."
+			},
+			"druidic_language": {
+				"name": "Idioma Druídico",
+				"effect": "Idioma secreto gratuito. Ensinar a não-druidas causa perda de classe."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+2",
+				"ref": "+0",
+				"will": "+2",
+				"special": ["Companheiro Animal", "Senso da Natureza", "Empatia com a Natureza", "Idioma Druídico"],
+				"spells_per_day": { "0": 3, "1": 1 }
+			},
+			{ "level": 2, "bab": "+1", "fort": "+3", "ref": "+0", "will": "+3", "special": ["Caminho da Floresta"], "spells_per_day": { "0": 4, "1": 2 } },
+			{
+				"level": 3,
+				"bab": "+2",
+				"fort": "+3",
+				"ref": "+1",
+				"will": "+3",
+				"special": ["Rastro Invisível"],
+				"spells_per_day": { "0": 4, "1": 2, "2": 1 }
+			},
+			{
+				"level": 4,
+				"bab": "+3",
+				"fort": "+4",
+				"ref": "+1",
+				"will": "+4",
+				"special": ["Resistir à Tentação da Natureza"],
+				"spells_per_day": { "0": 5, "1": 3, "2": 2 }
+			},
+			{
+				"level": 5,
+				"bab": "+3",
+				"fort": "+4",
+				"ref": "+1",
+				"will": "+4",
+				"special": ["Forma Selvagem (1/dia)"],
+				"spells_per_day": { "0": 5, "1": 3, "2": 2, "3": 1 }
+			},
+			{
+				"level": 6,
+				"bab": "+4",
+				"fort": "+5",
+				"ref": "+2",
+				"will": "+5",
+				"special": ["Forma Selvagem (2/dia)"],
+				"spells_per_day": { "0": 5, "1": 3, "2": 3, "3": 2 }
+			},
+			{
+				"level": 7,
+				"bab": "+5",
+				"fort": "+5",
+				"ref": "+2",
+				"will": "+5",
+				"special": ["Forma Selvagem (3/dia)"],
+				"spells_per_day": { "0": 6, "1": 4, "2": 3, "3": 2, "4": 1 }
+			},
+			{
+				"level": 8,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+2",
+				"will": "+6",
+				"special": ["Forma Selvagem (Grande)"],
+				"spells_per_day": { "0": 6, "1": 4, "2": 3, "3": 3, "4": 2 }
+			},
+			{
+				"level": 9,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+3",
+				"will": "+6",
+				"special": ["Imunidade a Venenos"],
+				"spells_per_day": { "0": 6, "1": 4, "2": 4, "3": 3, "4": 2, "5": 1 }
+			},
+			{
+				"level": 10,
+				"bab": "+7/+2",
+				"fort": "+7",
+				"ref": "+3",
+				"will": "+7",
+				"special": ["Forma Selvagem (4/dia)"],
+				"spells_per_day": { "0": 6, "1": 4, "2": 4, "3": 3, "4": 3, "5": 2 }
+			},
+			{
+				"level": 11,
+				"bab": "+8/+3",
+				"fort": "+7",
+				"ref": "+3",
+				"will": "+7",
+				"special": ["Forma Selvagem (Miúda)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 4, "3": 4, "4": 3, "5": 2, "6": 1 }
+			},
+			{
+				"level": 12,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+4",
+				"will": "+8",
+				"special": ["Forma Selvagem (Plantas)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 4, "3": 4, "4": 3, "5": 3, "6": 2 }
+			},
+			{
+				"level": 13,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+4",
+				"will": "+8",
+				"special": ["Mil Faces"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 4, "4": 4, "5": 3, "6": 2, "7": 1 }
+			},
+			{
+				"level": 14,
+				"bab": "+10/+5",
+				"fort": "+9",
+				"ref": "+4",
+				"will": "+9",
+				"special": ["Forma Selvagem (5/dia)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 4, "4": 4, "5": 3, "6": 3, "7": 2 }
+			},
+			{
+				"level": 15,
+				"bab": "+11/+6/+1",
+				"fort": "+9",
+				"ref": "+5",
+				"will": "+9",
+				"special": ["Corpo Atemporal", "Forma Selvagem (Enorme)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 4, "5": 4, "6": 3, "7": 2, "8": 1 }
+			},
+			{
+				"level": 16,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+10",
+				"special": ["Forma Selvagem (Elemental 1/dia)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 4, "5": 4, "6": 3, "7": 3, "8": 2 }
+			},
+			{
+				"level": 17,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 4, "6": 4, "7": 3, "8": 2, "9": 1 }
+			},
+			{
+				"level": 18,
+				"bab": "+13/+8/+3",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+11",
+				"special": ["Forma Selvagem (6/dia, Elemental 2/dia)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 4, "6": 4, "7": 3, "8": 3, "9": 2 }
+			},
+			{
+				"level": 19,
+				"bab": "+14/+9/+4",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 5, "6": 4, "7": 4, "8": 3, "9": 3 }
+			},
+			{
+				"level": 20,
+				"bab": "+15/+10/+5",
+				"fort": "+12",
+				"ref": "+6",
+				"will": "+12",
+				"special": ["Forma Selvagem (Elemental 3/dia, Elemental Enorme)"],
+				"spells_per_day": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 5, "6": 4, "7": 4, "8": 4, "9": 4 }
+			}
+		]
+	},
+	{
+		"name": "Feiticeiro",
+		"slug": "sorcerer",
+		"hit_die": "d4",
+		"alignment_restriction": "Qualquer",
+		"skill_points": {
+			"base": 2,
+			"modifier": "int"
+		},
+		"class_skills": ["Blefar", "Concentração", "Conhecimento (arcano)", "Identificar Magia", "Ofícios", "Profissão"],
+		"proficiencies": {
+			"weapons": ["Simples"],
+			"armors": ["Nenhuma"],
+			"shields": ["Nenhum"]
+		},
+		"class_features": {
+			"spells": {
+				"name": "Magias Arcanas",
+				"stat": "carisma",
+				"preparation": "spontaneous",
+				"condition": "Carisma deve ser 10 + nível da magia. Sofre falha de magia arcana se usar armadura."
+			},
+			"familiar": {
+				"name": "Invocar Familiar",
+				"effect": "Vínculo mágico com um animal pequeno. Concede bônus ao mestre (ex: +3 PV, +3 em perícias) e evolui com o nível.",
+				"mechanic": {
+					"type": "summon",
+					"cost": "100 PO",
+					"ritual_time": "24 horas"
+				}
+			},
+			"swap_spells": {
+				"name": "Substituição de Magia",
+				"effect": "No 4º nível e a cada 2 níveis subsequentes, pode trocar uma magia conhecida por outra do mesmo nível (obrigatoriamente 2 níveis abaixo do máximo capaz de conjurar)."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+0",
+				"ref": "+0",
+				"will": "+2",
+				"special": ["Invocar Familiar"],
+				"spells_per_day": { "0": 5, "1": 3 },
+				"spells_known": { "0": 4, "1": 2 }
+			},
+			{
+				"level": 2,
+				"bab": "+1",
+				"fort": "+0",
+				"ref": "+0",
+				"will": "+3",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 4 },
+				"spells_known": { "0": 5, "1": 2 }
+			},
+			{
+				"level": 3,
+				"bab": "+1",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+3",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 5 },
+				"spells_known": { "0": 5, "1": 3 }
+			},
+			{
+				"level": 4,
+				"bab": "+2",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+4",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 3 },
+				"spells_known": { "0": 6, "1": 3, "2": 1 }
+			},
+			{
+				"level": 5,
+				"bab": "+2",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 4 },
+				"spells_known": { "0": 6, "1": 4, "2": 2 }
+			},
+			{
+				"level": 6,
+				"bab": "+3",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+5",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 5, "3": 3 },
+				"spells_known": { "0": 7, "1": 4, "2": 2, "3": 1 }
+			},
+			{
+				"level": 7,
+				"bab": "+3",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 4 },
+				"spells_known": { "0": 7, "1": 5, "2": 3, "3": 2 }
+			},
+			{
+				"level": 8,
+				"bab": "+4",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+6",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 5, "4": 3 },
+				"spells_known": { "0": 8, "1": 5, "2": 3, "3": 2, "4": 1 }
+			},
+			{
+				"level": 9,
+				"bab": "+4",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 4 },
+				"spells_known": { "0": 8, "1": 5, "2": 4, "3": 3, "4": 2 }
+			},
+			{
+				"level": 10,
+				"bab": "+5",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+7",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 5, "5": 3 },
+				"spells_known": { "0": 9, "1": 5, "2": 4, "3": 3, "4": 2, "5": 1 }
+			},
+			{
+				"level": 11,
+				"bab": "+5",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 4 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 3, "5": 2 }
+			},
+			{
+				"level": 12,
+				"bab": "+6/+1",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+8",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 5, "6": 3 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 3, "5": 2, "6": 1 }
+			},
+			{
+				"level": 13,
+				"bab": "+6/+1",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 4 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 3, "6": 2 }
+			},
+			{
+				"level": 14,
+				"bab": "+7/+2",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+9",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 5, "7": 3 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 3, "6": 2, "7": 1 }
+			},
+			{
+				"level": 15,
+				"bab": "+7/+2",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+9",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 4 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 2 }
+			},
+			{
+				"level": 16,
+				"bab": "+8/+3",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+10",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 5, "8": 3 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 2, "8": 1 }
+			},
+			{
+				"level": 17,
+				"bab": "+8/+3",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 6, "8": 4 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 3, "8": 2 }
+			},
+			{
+				"level": 18,
+				"bab": "+9/+4",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+11",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 6, "8": 5, "9": 3 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 3, "8": 2, "9": 1 }
+			},
+			{
+				"level": 19,
+				"bab": "+9/+4",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 6, "8": 6, "9": 4 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 3, "8": 3, "9": 2 }
+			},
+			{
+				"level": 20,
+				"bab": "+10/+5",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+12",
+				"special": ["Substituir Magia"],
+				"spells_per_day": { "0": 6, "1": 6, "2": 6, "3": 6, "4": 6, "5": 6, "6": 6, "7": 6, "8": 6, "9": 6 },
+				"spells_known": { "0": 9, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3, "7": 3, "8": 3, "9": 3 }
+			}
+		]
+	},
+	{
+		"name": "Guerreiro",
+		"slug": "fighter",
+		"hit_die": "d10",
+		"alignment_restriction": "Qualquer",
+		"skill_points": {
+			"base": 2,
+			"modifier": "int"
+		},
+		"class_skills": ["Adestrar Animais", "Cavalgar", "Escalar", "Intimidação", "Natação", "Ofícios", "Saltar"],
+		"proficiencies": {
+			"weapons": ["Simples", "Marciais"],
+			"armors": ["Leves", "Médias", "Pesadas"],
+			"shields": ["Todos (incluindo escudo de corpo)"]
+		},
+		"class_features": {
+			"bonus_feats": {
+				"name": "Talentos Adicionais",
+				"effect": "Recebe um talento extra no 1º, 2º nível e a cada 2 níveis subsequentes (4, 6, 8...).",
+				"condition": "O talento deve ser escolhido da lista de talentos de guerreiro."
+			}
+		},
+		"progression": [
+			{ "level": 1, "bab": "+1", "fort": "+2", "ref": "+0", "will": "+0", "special": ["Talento Bônus"] },
+			{ "level": 2, "bab": "+2", "fort": "+3", "ref": "+0", "will": "+0", "special": ["Talento Bônus"] },
+			{ "level": 3, "bab": "+3", "fort": "+3", "ref": "+1", "will": "+1", "special": [] },
+			{ "level": 4, "bab": "+4", "fort": "+4", "ref": "+1", "will": "+1", "special": ["Talento Bônus"] },
+			{ "level": 5, "bab": "+5", "fort": "+4", "ref": "+1", "will": "+1", "special": [] },
+			{ "level": 6, "bab": "+6/+1", "fort": "+5", "ref": "+2", "will": "+2", "special": ["Talento Bônus"] },
+			{ "level": 7, "bab": "+7/+2", "fort": "+5", "ref": "+2", "will": "+2", "special": [] },
+			{ "level": 8, "bab": "+8/+3", "fort": "+6", "ref": "+2", "will": "+2", "special": ["Talento Bônus"] },
+			{ "level": 9, "bab": "+9/+4", "fort": "+6", "ref": "+3", "will": "+3", "special": [] },
+			{ "level": 10, "bab": "+10/+5", "fort": "+7", "ref": "+3", "will": "+3", "special": ["Talento Bônus"] },
+			{ "level": 11, "bab": "+11/+6/+1", "fort": "+7", "ref": "+3", "will": "+3", "special": [] },
+			{ "level": 12, "bab": "+12/+7/+2", "fort": "+8", "ref": "+4", "will": "+4", "special": ["Talento Bônus"] },
+			{ "level": 13, "bab": "+13/+8/+3", "fort": "+8", "ref": "+4", "will": "+4", "special": [] },
+			{ "level": 14, "bab": "+14/+9/+4", "fort": "+9", "ref": "+4", "will": "+4", "special": ["Talento Bônus"] },
+			{ "level": 15, "bab": "+15/+10/+5", "fort": "+9", "ref": "+5", "will": "+5", "special": [] },
+			{ "level": 16, "bab": "+16/+11/+6/+1", "fort": "+10", "ref": "+5", "will": "+5", "special": ["Talento Bônus"] },
+			{ "level": 17, "bab": "+17/+12/+7/+2", "fort": "+10", "ref": "+5", "will": "+5", "special": [] },
+			{ "level": 18, "bab": "+18/+13/+8/+3", "fort": "+11", "ref": "+6", "will": "+6", "special": ["Talento Bônus"] },
+			{ "level": 19, "bab": "+19/+14/+9/+4", "fort": "+11", "ref": "+6", "will": "+6", "special": [] },
+			{ "level": 20, "bab": "+20/+15/+10/+5", "fort": "+12", "ref": "+6", "will": "+6", "special": ["Talento Bônus"] }
+		]
+	},
+	{
+		"name": "Ladino",
+		"slug": "rogue",
+		"hit_die": "d6",
+		"alignment_restriction": "Qualquer",
+		"skill_points": {
+			"base": 8,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Abrir Fechaduras",
+			"Acrobacia",
+			"Arte da Fuga",
+			"Atuação",
+			"Avaliação",
+			"Blefar",
+			"Conhecimento (local)",
+			"Decifrar Escrita",
+			"Diplomacia",
+			"Disfarces",
+			"Equilíbrio",
+			"Escalar",
+			"Esconder-se",
+			"Falsificação",
+			"Furtividade",
+			"Intimidação",
+			"Natação",
+			"Observar",
+			"Obter Informação",
+			"Ofícios",
+			"Operar Mecanismo",
+			"Ouvir",
+			"Prestidigitação",
+			"Procurar",
+			"Profissão",
+			"Saltar",
+			"Sentir Motivação",
+			"Usar Cordas",
+			"Usar Instrumento Mágico"
+		],
+		"proficiencies": {
+			"weapons": ["Simples", "Besta de mão", "Sabre", "Arco curto", "Espada curta"],
+			"armors": ["Leves"],
+			"shields": ["Nenhum"]
+		},
+		"class_features": {
+			"sneak_attack": {
+				"name": "Ataque Furtivo",
+				"effect": "Dano extra quando o alvo não tem Dex na CA ou está flanqueado. Alcance máximo 9m.",
+				"progression": "Começa em 1d6 e aumenta +1d6 a cada 2 níveis."
+			},
+			"trapfinding": {
+				"name": "Encontrar Armadilhas",
+				"effect": "Pode usar Procurar e Operar Mecanismo para armadilhas com CD superior a 20."
+			},
+			"evasion": {
+				"name": "Evasão",
+				"effect": "Não sofre dano se passar num teste de Reflexos (para ataques que causam metade do dano).",
+				"condition": "Apenas sem armadura ou com armadura leve."
+			},
+			"trap_sense": {
+				"name": "Sentir Armadilhas",
+				"effect": "Bônus em Reflexos e CA contra armadilhas.",
+				"progression": "+1 no nível 3, aumentando a cada 3 níveis."
+			},
+			"uncanny_dodge": {
+				"name": "Esquiva Sobrenatural",
+				"effect": "Mantém bônus de Des na CA mesmo surpreso ou contra invisíveis."
+			},
+			"improved_uncanny_dodge": {
+				"name": "Esquiva Sobrenatural Aprimorada",
+				"effect": "Não pode ser flanqueado (exceto por ladino com 4 níveis a mais)."
+			},
+			"special_abilities": {
+				"name": "Habilidades Especiais",
+				"trigger_levels": [10, 13, 16, 19],
+				"options": [
+					{
+						"name": "Ataque Incapacitante",
+						"effect": "Ataque furtivo causa também 2 pontos de dano temporário de Força."
+					},
+					{
+						"name": "Amortecer Impacto",
+						"effect": "1/dia, teste de Reflexos (CD = dano) para reduzir dano de um golpe à metade."
+					},
+					{
+						"name": "Evasão Aprimorada",
+						"effect": "Metade do dano mesmo se falhar no teste de Reflexos (e 0 se passar)."
+					},
+					{
+						"name": "Oportunismo",
+						"effect": "1/rodada, realiza Ataque de Oportunidade contra inimigo atingido por aliado."
+					},
+					{
+						"name": "Maestria em Perícia",
+						"effect": "Escolha 3 + mod. Int perícias. Pode Escolher 10 nelas mesmo sob tensão."
+					},
+					{
+						"name": "Mente Escorregadia",
+						"effect": "Se falhar num teste de Vontade (encantamento), pode refazer o teste na próxima rodada."
+					},
+					{
+						"name": "Talento Adicional",
+						"effect": "Escolha um talento adicional."
+					}
+				]
+			}
+		},
+		"progression": [
+			{ "level": 1, "bab": "+0", "fort": "+0", "ref": "+2", "will": "+0", "special": ["Ataque Furtivo +1d6", "Encontrar Armadilhas"] },
+			{ "level": 2, "bab": "+1", "fort": "+0", "ref": "+3", "will": "+0", "special": ["Evasão"] },
+			{ "level": 3, "bab": "+2", "fort": "+1", "ref": "+3", "will": "+1", "special": ["Ataque Furtivo +2d6", "Sentir Armadilhas +1"] },
+			{ "level": 4, "bab": "+3", "fort": "+1", "ref": "+4", "will": "+1", "special": ["Esquiva Sobrenatural"] },
+			{ "level": 5, "bab": "+3", "fort": "+1", "ref": "+4", "will": "+1", "special": ["Ataque Furtivo +3d6"] },
+			{ "level": 6, "bab": "+4", "fort": "+2", "ref": "+5", "will": "+2", "special": ["Sentir Armadilhas +2"] },
+			{ "level": 7, "bab": "+5", "fort": "+2", "ref": "+5", "will": "+2", "special": ["Ataque Furtivo +4d6"] },
+			{ "level": 8, "bab": "+6/+1", "fort": "+2", "ref": "+6", "will": "+2", "special": ["Esquiva Sobrenatural Aprimorada"] },
+			{ "level": 9, "bab": "+6/+1", "fort": "+3", "ref": "+6", "will": "+3", "special": ["Ataque Furtivo +5d6", "Sentir Armadilhas +3"] },
+			{ "level": 10, "bab": "+7/+2", "fort": "+3", "ref": "+7", "will": "+3", "special": ["Habilidade Especial"] },
+			{ "level": 11, "bab": "+8/+3", "fort": "+3", "ref": "+7", "will": "+3", "special": ["Ataque Furtivo +6d6"] },
+			{ "level": 12, "bab": "+9/+4", "fort": "+4", "ref": "+8", "will": "+4", "special": ["Sentir Armadilhas +4"] },
+			{ "level": 13, "bab": "+9/+4", "fort": "+4", "ref": "+8", "will": "+4", "special": ["Ataque Furtivo +7d6", "Habilidade Especial"] },
+			{ "level": 14, "bab": "+10/+5", "fort": "+4", "ref": "+9", "will": "+4", "special": [] },
+			{ "level": 15, "bab": "+11/+6/+1", "fort": "+5", "ref": "+9", "will": "+5", "special": ["Ataque Furtivo +8d6", "Sentir Armadilhas +5"] },
+			{ "level": 16, "bab": "+12/+7/+2", "fort": "+5", "ref": "+10", "will": "+5", "special": ["Habilidade Especial"] },
+			{ "level": 17, "bab": "+12/+7/+2", "fort": "+5", "ref": "+10", "will": "+5", "special": ["Ataque Furtivo +9d6"] },
+			{ "level": 18, "bab": "+13/+8/+3", "fort": "+6", "ref": "+11", "will": "+6", "special": ["Sentir Armadilhas +6"] },
+			{ "level": 19, "bab": "+14/+9/+4", "fort": "+6", "ref": "+11", "will": "+6", "special": ["Ataque Furtivo +10d6", "Habilidade Especial"] },
+			{ "level": 20, "bab": "+15/+10/+5", "fort": "+6", "ref": "+12", "will": "+6", "special": [] }
+		]
+	},
+	{
+		"name": "Mago",
+		"slug": "wizard",
+		"hit_die": "d4",
+		"alignment_restriction": "Qualquer",
+		"skill_points": {
+			"base": 2,
+			"modifier": "int"
+		},
+		"class_skills": ["Concentração", "Conhecimento (todos)", "Decifrar Escrita", "Identificar Magia", "Ofícios", "Profissão"],
+		"proficiencies": {
+			"weapons": ["Clava", "Adaga", "Besta pesada", "Besta leve", "Bordão"],
+			"armors": ["Nenhuma"],
+			"shields": ["Nenhum"]
+		},
+		"class_features": {
+			"spells": {
+				"name": "Magias Arcanas",
+				"stat": "inteligência",
+				"preparation": "prepared_from_spellbook",
+				"condition": "Inteligência deve ser 10 + nível da magia. Sofre falha de magia arcana com armaduras."
+			},
+			"spellbook": {
+				"name": "Grimório",
+				"effect": "Contém as magias conhecidas. Inicia com todas de nível 0 + 3 de nível 1 + mod. Int. Ganha 2 magias novas por nível."
+			},
+			"arcane_school": {
+				"name": "Especialização em Escola",
+				"effect": "Opcional. Se escolhido, ganha +1 slot de magia por nível de magia (apenas para magias da escola) e +2 em Identificar Magia.",
+				"penalty": "Deve escolher 2 escolas proibidas (ou 1 se a escolhida for Adivinhação). Não pode usar magias dessas escolas.",
+				"options": [
+					"Abjuração",
+					"Adivinhação",
+					"Conjuração",
+					"Encantamento",
+					"Evocação",
+					"Ilusão",
+					"Necromancia",
+					"Transmutação",
+					"Universal (Sem especialização)"
+				]
+			},
+			"familiar": {
+				"name": "Invocar Familiar",
+				"effect": "Vínculo mágico com um animal pequeno. Concede bônus ao mestre e evolui com o nível.",
+				"mechanic": {
+					"type": "summon",
+					"cost": "100 PO",
+					"ritual_time": "24 horas"
+				}
+			},
+			"scribe_scroll": {
+				"name": "Escrever Pergaminho",
+				"effect": "Ganha o talento Escrever Pergaminho gratuitamente no 1º nível."
+			},
+			"bonus_feats": {
+				"name": "Talentos Adicionais de Mago",
+				"trigger_levels": [5, 10, 15, 20],
+				"condition": "Deve ser um Talento Metamágico, de Criação de Item ou Dominar Magia."
+			},
+			"bonus_languages": {
+				"name": "Idiomas de Mago",
+				"options": ["Dracônico"],
+				"effect": "Pode substituir um idioma racial inicial por Dracônico."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+0",
+				"ref": "+0",
+				"will": "+2",
+				"special": ["Invocar Familiar", "Escrever Pergaminho"],
+				"spells_per_day": { "0": 3, "1": 1 }
+			},
+			{
+				"level": 2,
+				"bab": "+1",
+				"fort": "+0",
+				"ref": "+0",
+				"will": "+3",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 2 }
+			},
+			{
+				"level": 3,
+				"bab": "+1",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+3",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 2, "2": 1 }
+			},
+			{
+				"level": 4,
+				"bab": "+2",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 3, "2": 2 }
+			},
+			{
+				"level": 5,
+				"bab": "+2",
+				"fort": "+1",
+				"ref": "+1",
+				"will": "+4",
+				"special": ["Talento Adicional"],
+				"spells_per_day": { "0": 4, "1": 3, "2": 2, "3": 1 }
+			},
+			{
+				"level": 6,
+				"bab": "+3",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 3, "2": 3, "3": 2 }
+			},
+			{
+				"level": 7,
+				"bab": "+3",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 3, "3": 2, "4": 1 }
+			},
+			{
+				"level": 8,
+				"bab": "+4",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 3, "3": 3, "4": 2 }
+			},
+			{
+				"level": 9,
+				"bab": "+4",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 3, "4": 2, "5": 1 }
+			},
+			{
+				"level": 10,
+				"bab": "+5",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+7",
+				"special": ["Talento Adicional"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 3, "4": 3, "5": 2 }
+			},
+			{
+				"level": 11,
+				"bab": "+5",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 3, "5": 2, "6": 1 }
+			},
+			{
+				"level": 12,
+				"bab": "+6/+1",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 3, "5": 3, "6": 2 }
+			},
+			{
+				"level": 13,
+				"bab": "+6/+1",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 3, "6": 2, "7": 1 }
+			},
+			{
+				"level": 14,
+				"bab": "+7/+2",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+9",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 3, "6": 3, "7": 2 }
+			},
+			{
+				"level": 15,
+				"bab": "+7/+2",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+9",
+				"special": ["Talento Adicional"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 3, "7": 2, "8": 1 }
+			},
+			{
+				"level": 16,
+				"bab": "+8/+3",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 3, "7": 3, "8": 2 }
+			},
+			{
+				"level": 17,
+				"bab": "+8/+3",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 4, "7": 3, "8": 2, "9": 1 }
+			},
+			{
+				"level": 18,
+				"bab": "+9/+4",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 4, "7": 3, "8": 3, "9": 2 }
+			},
+			{
+				"level": 19,
+				"bab": "+9/+4",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 4, "7": 4, "8": 3, "9": 3 }
+			},
+			{
+				"level": 20,
+				"bab": "+10/+5",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+12",
+				"special": ["Talento Adicional"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 4, "7": 4, "8": 4, "9": 4 }
+			}
+		]
+	},
+	{
+		"name": "Monge",
+		"slug": "monk",
+		"hit_die": "d8",
+		"alignment_restriction": "Qualquer Leal",
+		"skill_points": {
+			"base": 4,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Acrobacia",
+			"Arte da Fuga",
+			"Atuação",
+			"Concentração",
+			"Conhecimento (arcano)",
+			"Conhecimento (religião)",
+			"Diplomacia",
+			"Equilíbrio",
+			"Escalar",
+			"Esconder-se",
+			"Furtividade",
+			"Natação",
+			"Observar",
+			"Ofícios",
+			"Ouvir",
+			"Profissão",
+			"Saltar",
+			"Sentir Motivação"
+		],
+		"proficiencies": {
+			"weapons": [
+				"Clava",
+				"Besta (leve ou pesada)",
+				"Adaga",
+				"Machadinha",
+				"Azagaia",
+				"Kama",
+				"Nunchaku",
+				"Bordão",
+				"Sai",
+				"Shuriken",
+				"Siangham",
+				"Funda"
+			],
+			"armors": ["Nenhuma"],
+			"shields": ["Nenhum"]
+		},
+		"class_features": {
+			"ac_bonus": {
+				"name": "Bônus na CA",
+				"effect": "Soma Sabedoria na CA. Ganha bônus extra de +1 no 5º nível (aumenta a cada 5 níveis).",
+				"condition": "Perde se usar armadura, escudo ou carga média/pesada."
+			},
+			"flurry_of_blows": {
+				"name": "Rajada de Golpes",
+				"effect": "Ganha ataque extra com penalidade (-2, depois -1, depois 0). No 11º nível ganha dois ataques extras."
+			},
+			"unarmed_strike": {
+				"name": "Ataque Desarmado",
+				"effect": "Causa mais dano desarmado e conta como armado. Pode escolher dano letal ou não-letal."
+			},
+			"bonus_feats": {
+				"name": "Talentos Adicionais de Monge",
+				"trigger_levels": [1, 2, 6],
+				"options_level_1": ["Agarrar Aprimorado", "Ataque Atordoante"],
+				"options_level_2": ["Reflexos de Combate", "Desviar Objetos"],
+				"options_level_6": ["Derrubar Aprimorado", "Desarme Aprimorado"]
+			},
+			"evasion": {
+				"name": "Evasão",
+				"effect": "Nenhum dano em sucesso de Reflexos."
+			},
+			"fast_movement": {
+				"name": "Movimento Rápido",
+				"effect": "Bônus de deslocamento conforme tabela (apenas sem armadura)."
+			},
+			"still_mind": {
+				"name": "Mente Tranquila",
+				"effect": "+2 em testes de resistência contra Encantamentos."
+			},
+			"ki_strike": {
+				"name": "Ataque Chi",
+				"effect": "Ataques desarmados contam como mágicos (4º niv), leais (10º niv) e adamante (16º niv) para superar RD."
+			},
+			"slow_fall": {
+				"name": "Queda Suave",
+				"effect": "Reduz dano de queda se tiver uma parede ao alcance.",
+				"progression": "Começa em 6m e aumenta."
+			},
+			"purity_of_body": {
+				"name": "Pureza Corporal",
+				"effect": "Imunidade a todas as doenças (exceto mágicas)."
+			},
+			"wholeness_of_body": {
+				"name": "Integridade Corporal",
+				"effect": "Pode se curar diariamente. Total de PV = 2 * Nível."
+			},
+			"diamond_body": {
+				"name": "Corpo de Diamante",
+				"effect": "Imunidade a venenos."
+			},
+			"abundant_step": {
+				"name": "Passo Etéreo",
+				"effect": "Pode usar Porta Dimensional (nível de conjurador = 1/2 nível de monge) 1/dia."
+			},
+			"diamond_soul": {
+				"name": "Alma de Diamante",
+				"effect": "Resistência à Magia = Nível + 10."
+			},
+			"quivering_palm": {
+				"name": "Mão Vibrante",
+				"effect": "1/semana. Ataque que pode matar instantaneamente (Fortitude nega)."
+			},
+			"timeless_body": {
+				"name": "Corpo Atemporal",
+				"effect": "Não sofre penalidades de velhice e não morre de velhice."
+			},
+			"tongue_sun_moon": {
+				"name": "Idiomas do Sol e da Lua",
+				"effect": "Pode falar com qualquer criatura viva."
+			},
+			"empty_body": {
+				"name": "Corpo Vazio",
+				"effect": "Pode assumir forma etérea por 1 rodada/nível por dia."
+			},
+			"perfect_self": {
+				"name": "Auto-perfeição",
+				"effect": "Torna-se criatura mágica (imune a efeitos que afetam apenas humanóides). RD 10/mágica."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+2",
+				"special": ["Talento Bônus", "Rajada de Golpes", "Ataque Desarmado"],
+				"unarmed_damage": "1d6",
+				"ac_bonus": "+0",
+				"speed_bonus": "+0m"
+			},
+			{
+				"level": 2,
+				"bab": "+1",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+3",
+				"special": ["Talento Bônus", "Evasão"],
+				"unarmed_damage": "1d6",
+				"ac_bonus": "+0",
+				"speed_bonus": "+0m"
+			},
+			{
+				"level": 3,
+				"bab": "+2",
+				"fort": "+3",
+				"ref": "+3",
+				"will": "+3",
+				"special": ["Mente Tranquila"],
+				"unarmed_damage": "1d6",
+				"ac_bonus": "+0",
+				"speed_bonus": "+10m"
+			},
+			{
+				"level": 4,
+				"bab": "+3",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+4",
+				"special": ["Ataque Chi (Mágico)", "Queda Suave 6m"],
+				"unarmed_damage": "1d8",
+				"ac_bonus": "+0",
+				"speed_bonus": "+10m"
+			},
+			{
+				"level": 5,
+				"bab": "+3",
+				"fort": "+4",
+				"ref": "+4",
+				"will": "+4",
+				"special": ["Pureza Corporal"],
+				"unarmed_damage": "1d8",
+				"ac_bonus": "+1",
+				"speed_bonus": "+10m"
+			},
+			{
+				"level": 6,
+				"bab": "+4",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+5",
+				"special": ["Talento Bônus", "Queda Suave 9m"],
+				"unarmed_damage": "1d8",
+				"ac_bonus": "+1",
+				"speed_bonus": "+20m"
+			},
+			{
+				"level": 7,
+				"bab": "+5",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+5",
+				"special": ["Integridade Corporal"],
+				"unarmed_damage": "1d8",
+				"ac_bonus": "+1",
+				"speed_bonus": "+20m"
+			},
+			{
+				"level": 8,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Queda Suave 12m"],
+				"unarmed_damage": "1d10",
+				"ac_bonus": "+1",
+				"speed_bonus": "+20m"
+			},
+			{
+				"level": 9,
+				"bab": "+6/+1",
+				"fort": "+6",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Evasão Aprimorada"],
+				"unarmed_damage": "1d10",
+				"ac_bonus": "+1",
+				"speed_bonus": "+30m"
+			},
+			{
+				"level": 10,
+				"bab": "+7/+2",
+				"fort": "+7",
+				"ref": "+7",
+				"will": "+7",
+				"special": ["Ataque Chi (Ordem)", "Queda Suave 15m"],
+				"unarmed_damage": "1d10",
+				"ac_bonus": "+2",
+				"speed_bonus": "+30m"
+			},
+			{
+				"level": 11,
+				"bab": "+8/+3",
+				"fort": "+7",
+				"ref": "+7",
+				"will": "+7",
+				"special": ["Corpo de Diamante", "Rajada Maior"],
+				"unarmed_damage": "1d10",
+				"ac_bonus": "+2",
+				"speed_bonus": "+30m"
+			},
+			{
+				"level": 12,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+8",
+				"will": "+8",
+				"special": ["Passo Etéreo", "Queda Suave 18m"],
+				"unarmed_damage": "2d6",
+				"ac_bonus": "+2",
+				"speed_bonus": "+40m"
+			},
+			{
+				"level": 13,
+				"bab": "+9/+4",
+				"fort": "+8",
+				"ref": "+8",
+				"will": "+8",
+				"special": ["Alma de Diamante"],
+				"unarmed_damage": "2d6",
+				"ac_bonus": "+2",
+				"speed_bonus": "+40m"
+			},
+			{
+				"level": 14,
+				"bab": "+10/+5",
+				"fort": "+9",
+				"ref": "+9",
+				"will": "+9",
+				"special": ["Queda Suave 21m"],
+				"unarmed_damage": "2d6",
+				"ac_bonus": "+2",
+				"speed_bonus": "+40m"
+			},
+			{
+				"level": 15,
+				"bab": "+11/+6/+1",
+				"fort": "+9",
+				"ref": "+9",
+				"will": "+9",
+				"special": ["Mão Vibrante"],
+				"unarmed_damage": "2d6",
+				"ac_bonus": "+3",
+				"speed_bonus": "+50m"
+			},
+			{
+				"level": 16,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+10",
+				"will": "+10",
+				"special": ["Ataque Chi (Adamante)", "Queda Suave 24m"],
+				"unarmed_damage": "2d8",
+				"ac_bonus": "+3",
+				"speed_bonus": "+50m"
+			},
+			{
+				"level": 17,
+				"bab": "+12/+7/+2",
+				"fort": "+10",
+				"ref": "+10",
+				"will": "+10",
+				"special": ["Corpo Atemporal", "Idiomas do Sol e da Lua"],
+				"unarmed_damage": "2d8",
+				"ac_bonus": "+3",
+				"speed_bonus": "+50m"
+			},
+			{
+				"level": 18,
+				"bab": "+13/+8/+3",
+				"fort": "+11",
+				"ref": "+11",
+				"will": "+11",
+				"special": ["Queda Suave 27m"],
+				"unarmed_damage": "2d8",
+				"ac_bonus": "+3",
+				"speed_bonus": "+60m"
+			},
+			{
+				"level": 19,
+				"bab": "+14/+9/+4",
+				"fort": "+11",
+				"ref": "+11",
+				"will": "+11",
+				"special": ["Corpo Vazio"],
+				"unarmed_damage": "2d8",
+				"ac_bonus": "+3",
+				"speed_bonus": "+60m"
+			},
+			{
+				"level": 20,
+				"bab": "+15/+10/+5",
+				"fort": "+12",
+				"ref": "+12",
+				"will": "+12",
+				"special": ["Auto-perfeição", "Queda Suave (Qualquer)"],
+				"unarmed_damage": "2d10",
+				"ac_bonus": "+4",
+				"speed_bonus": "+60m"
+			}
+		]
+	},
+	{
+		"name": "Paladino",
+		"slug": "paladin",
+		"hit_die": "d10",
+		"alignment_restriction": "Leal e Bom",
+		"skill_points": {
+			"base": 2,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Adestrar Animais",
+			"Cavalgar",
+			"Concentração",
+			"Conhecimento (nobreza e realeza)",
+			"Conhecimento (religião)",
+			"Cura",
+			"Diplomacia",
+			"Ofícios",
+			"Profissão",
+			"Sentir Motivação"
+		],
+		"proficiencies": {
+			"weapons": ["Simples", "Marciais"],
+			"armors": ["Leves", "Médias", "Pesadas"],
+			"shields": ["Todos (exceto escudo de corpo)"]
+		},
+		"class_features": {
+			"aura_good": {
+				"name": "Aura do Bem",
+				"effect": "O poder da aura equivale ao nível de paladino (detectável por magias)."
+			},
+			"detect_evil": {
+				"name": "Detectar o Mal",
+				"effect": "Pode usar à vontade (como a magia)."
+			},
+			"smite_evil": {
+				"name": "Destruir o Mal",
+				"effect": "Soma Carisma no ataque e Nível no dano contra alvo maligno. 1 uso/dia no nível 1, aumentando a cada 5 níveis.",
+				"progression": "1/dia (nv1), 2/dia (nv5), 3/dia (nv10), 4/dia (nv15), 5/dia (nv20)."
+			},
+			"divine_grace": {
+				"name": "Graça Divina",
+				"effect": "Soma o modificador de Carisma em todos os testes de resistência."
+			},
+			"lay_on_hands": {
+				"name": "Cura pelas Mãos",
+				"effect": "Pode curar um total de PV por dia igual a Nível x Mod. Carisma. Pode usar para causar dano em mortos-vivos."
+			},
+			"aura_courage": {
+				"name": "Aura de Coragem",
+				"effect": "Imune a medo. Aliados a 3m ganham +4 contra medo."
+			},
+			"divine_health": {
+				"name": "Saúde Divina",
+				"effect": "Imunidade a todas as doenças (incluindo mágicas)."
+			},
+			"turn_undead": {
+				"name": "Expulsar Mortos-vivos",
+				"effect": "Como um clérigo de 3 níveis inferiores. Usos diários = 3 + Mod. Carisma."
+			},
+			"spells": {
+				"name": "Magias Divinas",
+				"stat": "sabedoria",
+				"preparation": "daily_prayer",
+				"condition": "Nível de conjurador é metade do nível de paladino. Sabedoria deve ser 10 + nível da magia."
+			},
+			"special_mount": {
+				"name": "Montaria Especial",
+				"effect": "Invoca uma montaria mágica e inteligente (ex: Cavalo de Guerra Pesado) que serve por 2h/nível."
+			},
+			"remove_disease": {
+				"name": "Remover Doença",
+				"effect": "Pode usar Remover Doença 1/semana (aumenta a cada 3 níveis)."
+			},
+			"code_of_conduct": {
+				"name": "Código de Conduta",
+				"effect": "Deve manter tendência LB. Não pode mentir, roubar, usar veneno ou cometer atos malignos sob pena de perder habilidades."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+1",
+				"fort": "+2",
+				"ref": "+0",
+				"will": "+0",
+				"special": ["Aura do Bem", "Detectar o Mal", "Destruir o Mal 1/dia"],
+				"spells_per_day": {}
+			},
+			{ "level": 2, "bab": "+2", "fort": "+3", "ref": "+0", "will": "+0", "special": ["Graça Divina", "Cura pelas Mãos"], "spells_per_day": {} },
+			{ "level": 3, "bab": "+3", "fort": "+3", "ref": "+1", "will": "+1", "special": ["Aura de Coragem", "Saúde Divina"], "spells_per_day": {} },
+			{ "level": 4, "bab": "+4", "fort": "+4", "ref": "+1", "will": "+1", "special": ["Expulsar Mortos-vivos"], "spells_per_day": { "1": 0 } },
+			{
+				"level": 5,
+				"bab": "+5",
+				"fort": "+4",
+				"ref": "+1",
+				"will": "+1",
+				"special": ["Destruir o Mal 2/dia", "Montaria Especial"],
+				"spells_per_day": { "1": 0 }
+			},
+			{ "level": 6, "bab": "+6/+1", "fort": "+5", "ref": "+2", "will": "+2", "special": ["Remover Doença 1/semana"], "spells_per_day": { "1": 1 } },
+			{ "level": 7, "bab": "+7/+2", "fort": "+5", "ref": "+2", "will": "+2", "special": [], "spells_per_day": { "1": 1 } },
+			{ "level": 8, "bab": "+8/+3", "fort": "+6", "ref": "+2", "will": "+2", "special": [], "spells_per_day": { "1": 1, "2": 0 } },
+			{
+				"level": 9,
+				"bab": "+9/+4",
+				"fort": "+6",
+				"ref": "+3",
+				"will": "+3",
+				"special": ["Remover Doença 2/semana"],
+				"spells_per_day": { "1": 1, "2": 0 }
+			},
+			{
+				"level": 10,
+				"bab": "+10/+5",
+				"fort": "+7",
+				"ref": "+3",
+				"will": "+3",
+				"special": ["Destruir o Mal 3/dia"],
+				"spells_per_day": { "1": 1, "2": 1 }
+			},
+			{ "level": 11, "bab": "+11/+6/+1", "fort": "+7", "ref": "+3", "will": "+3", "special": [], "spells_per_day": { "1": 1, "2": 1, "3": 0 } },
+			{
+				"level": 12,
+				"bab": "+12/+7/+2",
+				"fort": "+8",
+				"ref": "+4",
+				"will": "+4",
+				"special": ["Remover Doença 3/semana"],
+				"spells_per_day": { "1": 1, "2": 1, "3": 1 }
+			},
+			{ "level": 13, "bab": "+13/+8/+3", "fort": "+8", "ref": "+4", "will": "+4", "special": [], "spells_per_day": { "1": 1, "2": 1, "3": 1 } },
+			{
+				"level": 14,
+				"bab": "+14/+9/+4",
+				"fort": "+9",
+				"ref": "+4",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "1": 2, "2": 1, "3": 1, "4": 0 }
+			},
+			{
+				"level": 15,
+				"bab": "+15/+10/+5",
+				"fort": "+9",
+				"ref": "+5",
+				"will": "+5",
+				"special": ["Remover Doença 4/semana", "Destruir o Mal 4/dia"],
+				"spells_per_day": { "1": 2, "2": 1, "3": 1, "4": 1 }
+			},
+			{
+				"level": 16,
+				"bab": "+16/+11/+6/+1",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "1": 2, "2": 2, "3": 1, "4": 1 }
+			},
+			{
+				"level": 17,
+				"bab": "+17/+12/+7/+2",
+				"fort": "+10",
+				"ref": "+5",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "1": 2, "2": 2, "3": 2, "4": 1 }
+			},
+			{
+				"level": 18,
+				"bab": "+18/+13/+8/+3",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Remover Doença 5/semana"],
+				"spells_per_day": { "1": 3, "2": 2, "3": 2, "4": 1 }
+			},
+			{
+				"level": 19,
+				"bab": "+19/+14/+9/+4",
+				"fort": "+11",
+				"ref": "+6",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "1": 3, "2": 3, "3": 3, "4": 2 }
+			},
+			{
+				"level": 20,
+				"bab": "+20/+15/+10/+5",
+				"fort": "+12",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Destruir o Mal 5/dia"],
+				"spells_per_day": { "1": 3, "2": 3, "3": 3, "4": 3 }
+			}
+		]
+	},
+	{
+		"name": "Ranger",
+		"slug": "ranger",
+		"hit_die": "d8",
+		"alignment_restriction": "Qualquer",
+		"skill_points": {
+			"base": 6,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Adestrar Animais",
+			"Cavalgar",
+			"Concentração",
+			"Conhecimento (geografia)",
+			"Conhecimento (masmorras)",
+			"Conhecimento (natureza)",
+			"Cura",
+			"Escalar",
+			"Esconder-se",
+			"Furtividade",
+			"Natação",
+			"Observar",
+			"Ofícios",
+			"Ouvir",
+			"Procurar",
+			"Profissão",
+			"Saltar",
+			"Sobrevivência",
+			"Usar Cordas"
+		],
+		"proficiencies": {
+			"weapons": ["Simples", "Marciais"],
+			"armors": ["Leves"],
+			"shields": ["Todos (exceto escudo de corpo)"]
+		},
+		"class_features": {
+			"favored_enemy": {
+				"name": "Inimigo Predileto",
+				"effect": "Ganha bônus de +2 em Blefar, Ouvir, Sentir Motivação, Observar, Sobrevivência e Dano contra o tipo escolhido.",
+				"progression": "Novo inimigo a cada 5 níveis. Ao escolher um novo, pode aumentar o bônus de um antigo em +2.",
+				"options": [
+					"Aberração",
+					"Animal",
+					"Besta Mágica",
+					"Constructo",
+					"Dragão",
+					"Elemental",
+					"Extra-Planar (água)",
+					"Extra-Planar (ar)",
+					"Extra-Planar (bom)",
+					"Extra-Planar (caótico)",
+					"Extra-Planar (fogo)",
+					"Extra-Planar (leal)",
+					"Extra-Planar (mal)",
+					"Extra-Planar (nativo)",
+					"Extra-Planar (terra)",
+					"Fada",
+					"Gigante",
+					"Humanóide (anão)",
+					"Humanóide (aquático)",
+					"Humanóide (elfo)",
+					"Humanóide (gnoll)",
+					"Humanóide (gnomo)",
+					"Humanóide (goblinóide)",
+					"Humanóide (halfling)",
+					"Humanóide (humano)",
+					"Humanóide (orc)",
+					"Humanóide (réptil)",
+					"Humanóide Monstruoso",
+					"Inseto",
+					"Limo",
+					"Morto-vivo",
+					"Planta"
+				]
+			},
+			"track": {
+				"name": "Rastrear",
+				"effect": "Recebe o talento Rastrear gratuitamente."
+			},
+			"wild_empathy": {
+				"name": "Empatia com a Natureza",
+				"effect": "Melhorar atitude de animais. Teste: 1d20 + nível de ranger + mod. Carisma."
+			},
+			"combat_style": {
+				"name": "Estilo de Combate",
+				"effect": "Escolha Arquearia ou Duas Armas. Ganha talentos específicos desse estilo no nível 2, 6 e 11 (sem precisar de pré-requisitos).",
+				"condition": "Só funciona com armadura leve ou sem armadura.",
+				"options": ["Arquearia", "Combate com Duas Armas"]
+			},
+			"endurance": {
+				"name": "Tolerância",
+				"effect": "Recebe o talento Tolerância gratuitamente no 3º nível."
+			},
+			"animal_companion": {
+				"name": "Companheiro Animal",
+				"effect": "Ganha um companheiro animal (nível efetivo de druida = metade do nível de ranger)."
+			},
+			"spells": {
+				"name": "Magias Divinas",
+				"stat": "sabedoria",
+				"preparation": "daily_meditation",
+				"condition": "Nível de conjurador é metade do nível de ranger. Sabedoria deve ser 10 + nível da magia."
+			},
+			"woodland_stride": {
+				"name": "Caminho da Floresta",
+				"effect": "Deslocamento normal em terrenos naturais difíceis (arbustos, espinhos) sem sofrer dano."
+			},
+			"swift_tracker": {
+				"name": "Rastreador Eficaz",
+				"effect": "Pode rastrear em velocidade normal sem penalidade (-5)."
+			},
+			"evasion": {
+				"name": "Evasão",
+				"effect": "Nenhum dano em sucesso de Reflexos (apenas armadura leve/sem)."
+			},
+			"camouflage": {
+				"name": "Camuflagem",
+				"effect": "Pode usar Esconder-se em terreno natural mesmo sem cobertura."
+			},
+			"hide_in_plain_sight": {
+				"name": "Mimetismo",
+				"effect": "Pode usar Esconder-se em terreno natural mesmo sendo observado."
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+1",
+				"fort": "+2",
+				"ref": "+2",
+				"will": "+0",
+				"special": ["1º Inimigo Predileto", "Rastrear", "Empatia com a Natureza"],
+				"spells_per_day": {}
+			},
+			{ "level": 2, "bab": "+2", "fort": "+3", "ref": "+3", "will": "+0", "special": ["Estilo de Combate"], "spells_per_day": {} },
+			{ "level": 3, "bab": "+3", "fort": "+3", "ref": "+3", "will": "+1", "special": ["Tolerância"], "spells_per_day": {} },
+			{ "level": 4, "bab": "+4", "fort": "+4", "ref": "+4", "will": "+1", "special": ["Companheiro Animal"], "spells_per_day": { "1": 0 } },
+			{ "level": 5, "bab": "+5", "fort": "+4", "ref": "+4", "will": "+1", "special": ["2º Inimigo Predileto"], "spells_per_day": { "1": 0 } },
+			{
+				"level": 6,
+				"bab": "+6/+1",
+				"fort": "+5",
+				"ref": "+5",
+				"will": "+2",
+				"special": ["Estilo de Combate Aprimorado"],
+				"spells_per_day": { "1": 1 }
+			},
+			{ "level": 7, "bab": "+7/+2", "fort": "+5", "ref": "+5", "will": "+2", "special": ["Caminho da Floresta"], "spells_per_day": { "1": 1 } },
+			{ "level": 8, "bab": "+8/+3", "fort": "+6", "ref": "+6", "will": "+2", "special": ["Rastreador Eficaz"], "spells_per_day": { "1": 1, "2": 0 } },
+			{ "level": 9, "bab": "+9/+4", "fort": "+6", "ref": "+6", "will": "+3", "special": ["Evasão"], "spells_per_day": { "1": 1, "2": 0 } },
+			{
+				"level": 10,
+				"bab": "+10/+5",
+				"fort": "+7",
+				"ref": "+7",
+				"will": "+3",
+				"special": ["3º Inimigo Predileto"],
+				"spells_per_day": { "1": 1, "2": 1 }
+			},
+			{
+				"level": 11,
+				"bab": "+11/+6/+1",
+				"fort": "+7",
+				"ref": "+7",
+				"will": "+3",
+				"special": ["Domínio do Estilo de Combate"],
+				"spells_per_day": { "1": 1, "2": 1, "3": 0 }
+			},
+			{ "level": 12, "bab": "+12/+7/+2", "fort": "+8", "ref": "+8", "will": "+4", "special": [], "spells_per_day": { "1": 1, "2": 1, "3": 1 } },
+			{
+				"level": 13,
+				"bab": "+13/+8/+3",
+				"fort": "+8",
+				"ref": "+8",
+				"will": "+4",
+				"special": ["Camuflagem"],
+				"spells_per_day": { "1": 1, "2": 1, "3": 1 }
+			},
+			{
+				"level": 14,
+				"bab": "+14/+9/+4",
+				"fort": "+9",
+				"ref": "+9",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "1": 2, "2": 1, "3": 1, "4": 0 }
+			},
+			{
+				"level": 15,
+				"bab": "+15/+10/+5",
+				"fort": "+9",
+				"ref": "+9",
+				"will": "+5",
+				"special": ["4º Inimigo Predileto"],
+				"spells_per_day": { "1": 2, "2": 1, "3": 1, "4": 1 }
+			},
+			{
+				"level": 16,
+				"bab": "+16/+11/+6/+1",
+				"fort": "+10",
+				"ref": "+10",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "1": 2, "2": 2, "3": 1, "4": 1 }
+			},
+			{
+				"level": 17,
+				"bab": "+17/+12/+7/+2",
+				"fort": "+10",
+				"ref": "+10",
+				"will": "+5",
+				"special": ["Mimetismo"],
+				"spells_per_day": { "1": 2, "2": 2, "3": 2, "4": 1 }
+			},
+			{
+				"level": 18,
+				"bab": "+18/+13/+8/+3",
+				"fort": "+11",
+				"ref": "+11",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "1": 3, "2": 2, "3": 2, "4": 1 }
+			},
+			{
+				"level": 19,
+				"bab": "+19/+14/+9/+4",
+				"fort": "+11",
+				"ref": "+11",
+				"will": "+6",
+				"special": [],
+				"spells_per_day": { "1": 3, "2": 3, "3": 3, "4": 2 }
+			},
+			{
+				"level": 20,
+				"bab": "+20/+15/+10/+5",
+				"fort": "+12",
+				"ref": "+12",
+				"will": "+6",
+				"special": ["5º Inimigo Predileto"],
+				"spells_per_day": { "1": 3, "2": 3, "3": 3, "4": 3 }
+			}
+		]
+	},
+	{
+		"name": "Bardo",
+		"slug": "bard",
+		"hit_die": "d6",
+		"alignment_restriction": "Qualquer não-leal",
+		"skill_points": {
+			"base": 6,
+			"modifier": "int"
+		},
+		"class_skills": [
+			"Acrobacia",
+			"Arte da Fuga",
+			"Atuação",
+			"Avaliação",
+			"Blefar",
+			"Concentração",
+			"Conhecimento (todos)",
+			"Decifrar Escrita",
+			"Diplomacia",
+			"Disfarces",
+			"Equilíbrio",
+			"Escalar",
+			"Esconder-se",
+			"Falar Idioma",
+			"Furtividade",
+			"Identificar Magia",
+			"Natação",
+			"Obter Informação",
+			"Ofícios",
+			"Ouvir",
+			"Prestidigitação",
+			"Profissão",
+			"Saltar",
+			"Sentir Motivação",
+			"Usar Instrumento Mágico"
+		],
+		"proficiencies": {
+			"weapons": ["Simples", "Espada longa", "Rapieira", "Bastão (sap)", "Espada curta", "Arco curto", "Chicote"],
+			"armors": ["Leves"],
+			"shields": ["Leves", "Pesados"]
+		},
+		"class_features": {
+			"spells": {
+				"name": "Magias Arcanas",
+				"stat": "carisma",
+				"preparation": "spontaneous",
+				"condition": "Pode conjurar usando armadura leve sem falha de magia arcana. Carisma 10 + nível da magia necessário."
+			},
+			"bardic_knowledge": {
+				"name": "Conhecimento de Bardo",
+				"effect": "Teste especial (d20 + Nível de Bardo + Mod. Int) para saber informações sobre itens notáveis, lugares ou lendas."
+			},
+			"bardic_music": {
+				"name": "Música de Bardo",
+				"uses_per_day": "Nível de Bardo",
+				"effect": "Usa música/poesia para gerar efeitos mágicos. Requer graduações em Atuação.",
+				"abilities": [
+					{ "name": "Fascinar", "level": 1, "req_perform": 3 },
+					{ "name": "Inspirar Coragem +1", "level": 1, "req_perform": 3 },
+					{ "name": "Contra-música", "level": 1, "req_perform": 3 },
+					{ "name": "Inspirar Competência", "level": 3, "req_perform": 6 },
+					{ "name": "Sugestão", "level": 6, "req_perform": 9 },
+					{ "name": "Inspirar Grandeza", "level": 9, "req_perform": 12 },
+					{ "name": "Canção de Liberdade", "level": 12, "req_perform": 15 },
+					{ "name": "Inspirar Heroísmo", "level": 15, "req_perform": 18 },
+					{ "name": "Sugestão em Massa", "level": 18, "req_perform": 21 }
+				]
+			}
+		},
+		"progression": [
+			{
+				"level": 1,
+				"bab": "+0",
+				"fort": "+0",
+				"ref": "+2",
+				"will": "+2",
+				"special": ["Música de Bardo", "Conhecimento de Bardo", "Inspirar Coragem +1"],
+				"spells_per_day": { "0": 2 },
+				"spells_known": { "0": 4 }
+			},
+			{
+				"level": 2,
+				"bab": "+1",
+				"fort": "+0",
+				"ref": "+3",
+				"will": "+3",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 0 },
+				"spells_known": { "0": 5, "1": 2 }
+			},
+			{
+				"level": 3,
+				"bab": "+2",
+				"fort": "+1",
+				"ref": "+3",
+				"will": "+3",
+				"special": ["Inspirar Competência"],
+				"spells_per_day": { "0": 3, "1": 1 },
+				"spells_known": { "0": 6, "1": 3 }
+			},
+			{
+				"level": 4,
+				"bab": "+3",
+				"fort": "+1",
+				"ref": "+4",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 2, "2": 0 },
+				"spells_known": { "0": 6, "1": 3, "2": 2 }
+			},
+			{
+				"level": 5,
+				"bab": "+3",
+				"fort": "+1",
+				"ref": "+4",
+				"will": "+4",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 3, "2": 1 },
+				"spells_known": { "0": 6, "1": 4, "2": 3 }
+			},
+			{
+				"level": 6,
+				"bab": "+4",
+				"fort": "+2",
+				"ref": "+5",
+				"will": "+5",
+				"special": ["Sugestão"],
+				"spells_per_day": { "0": 3, "1": 3, "2": 2 },
+				"spells_known": { "0": 6, "1": 4, "2": 3 }
+			},
+			{
+				"level": 7,
+				"bab": "+5",
+				"fort": "+2",
+				"ref": "+5",
+				"will": "+5",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 3, "2": 2, "3": 0 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 2 }
+			},
+			{
+				"level": 8,
+				"bab": "+6/+1",
+				"fort": "+2",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Inspirar Coragem +2"],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 1 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 3 }
+			},
+			{
+				"level": 9,
+				"bab": "+6/+1",
+				"fort": "+3",
+				"ref": "+6",
+				"will": "+6",
+				"special": ["Inspirar Grandeza"],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 2 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 3 }
+			},
+			{
+				"level": 10,
+				"bab": "+7/+2",
+				"fort": "+3",
+				"ref": "+7",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 2, "4": 0 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 2 }
+			},
+			{
+				"level": 11,
+				"bab": "+8/+3",
+				"fort": "+3",
+				"ref": "+7",
+				"will": "+7",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 3, "4": 1 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 3 }
+			},
+			{
+				"level": 12,
+				"bab": "+9/+4",
+				"fort": "+4",
+				"ref": "+8",
+				"will": "+8",
+				"special": ["Canção de Liberdade"],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 3, "4": 2 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 3 }
+			},
+			{
+				"level": 13,
+				"bab": "+9/+4",
+				"fort": "+4",
+				"ref": "+8",
+				"will": "+8",
+				"special": [],
+				"spells_per_day": { "0": 3, "1": 3, "2": 3, "3": 3, "4": 2, "5": 0 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 4, "5": 2 }
+			},
+			{
+				"level": 14,
+				"bab": "+10/+5",
+				"fort": "+4",
+				"ref": "+9",
+				"will": "+9",
+				"special": ["Inspirar Coragem +3"],
+				"spells_per_day": { "0": 4, "1": 3, "2": 3, "3": 3, "4": 3, "5": 1 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 4, "5": 3 }
+			},
+			{
+				"level": 15,
+				"bab": "+11/+6/+1",
+				"fort": "+5",
+				"ref": "+9",
+				"will": "+9",
+				"special": ["Inspirar Heroísmo"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 3, "3": 3, "4": 3, "5": 2 },
+				"spells_known": { "0": 6, "1": 4, "2": 4, "3": 4, "4": 4, "5": 3 }
+			},
+			{
+				"level": 16,
+				"bab": "+12/+7/+2",
+				"fort": "+5",
+				"ref": "+10",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 3, "4": 3, "5": 2, "6": 0 },
+				"spells_known": { "0": 6, "1": 5, "2": 4, "3": 4, "4": 4, "5": 4, "6": 2 }
+			},
+			{
+				"level": 17,
+				"bab": "+12/+7/+2",
+				"fort": "+5",
+				"ref": "+10",
+				"will": "+10",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 3, "5": 3, "6": 1 },
+				"spells_known": { "0": 6, "1": 5, "2": 5, "3": 4, "4": 4, "5": 4, "6": 3 }
+			},
+			{
+				"level": 18,
+				"bab": "+13/+8/+3",
+				"fort": "+6",
+				"ref": "+11",
+				"will": "+11",
+				"special": ["Sugestão em Massa"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 3, "6": 2 },
+				"spells_known": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 4, "5": 4, "6": 3 }
+			},
+			{
+				"level": 19,
+				"bab": "+14/+9/+4",
+				"fort": "+6",
+				"ref": "+11",
+				"will": "+11",
+				"special": [],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 3 },
+				"spells_known": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 4, "6": 3 }
+			},
+			{
+				"level": 20,
+				"bab": "+15/+10/+5",
+				"fort": "+6",
+				"ref": "+12",
+				"will": "+12",
+				"special": ["Inspirar Coragem +4"],
+				"spells_per_day": { "0": 4, "1": 4, "2": 4, "3": 4, "4": 4, "5": 4, "6": 4 },
+				"spells_known": { "0": 6, "1": 5, "2": 5, "3": 5, "4": 5, "5": 5, "6": 4 }
+			}
+		]
+	}
+]

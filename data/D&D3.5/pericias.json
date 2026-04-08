@@ -1,0 +1,354 @@
+[
+	{
+		"name": "Abrir Fechaduras",
+		"slug": "open_lock",
+		"attribute": "dex",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Abrir cadeados, fechaduras e algemas com ferramentas de ladrão."
+	},
+	{
+		"name": "Acrobacia",
+		"slug": "tumble",
+		"attribute": "dex",
+		"trained_only": true,
+		"armor_check_penalty": true,
+		"description": "Mergulhar, rolar, dar cambalhotas e passar por inimigos sem provocar ataques de oportunidade."
+	},
+	{
+		"name": "Adestrar Animais",
+		"slug": "handle_animal",
+		"attribute": "cha",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Ensinar truques a animais ou controlá-los em situações difíceis."
+	},
+	{
+		"name": "Arte da Fuga",
+		"slug": "escape_artist",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Escapar de amarras, algemas, imobilizações ou espremer-se em espaços apertados."
+	},
+	{
+		"name": "Atuação",
+		"slug": "perform",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Entreter plateias (música, dança, oratória). Essencial para Bardos."
+	},
+	{
+		"name": "Avaliação",
+		"slug": "appraise",
+		"attribute": "int",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Determinar o valor monetário de um item."
+	},
+	{
+		"name": "Blefar",
+		"slug": "bluff",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Mentir, enganar, fintar em combate ou passar mensagens secretas."
+	},
+	{
+		"name": "Cavalgar",
+		"slug": "ride",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Controlar montarias em combate ou realizar manobras de montaria."
+	},
+	{
+		"name": "Concentração",
+		"slug": "concentration",
+		"attribute": "con",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Manter o foco (especialmente para conjurar magias) sob distração ou dano."
+	},
+	{
+		"name": "Conhecimento (Arcano)",
+		"slug": "knowledge_arcana",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Magias arcanas, bestas mágicas, dragões e constructos."
+	},
+	{
+		"name": "Conhecimento (Geografia)",
+		"slug": "knowledge_geography",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Terras, terrenos, climas e povos."
+	},
+	{
+		"name": "Conhecimento (História)",
+		"slug": "knowledge_history",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Guerras, colônias, migrações e fundação de cidades."
+	},
+	{
+		"name": "Conhecimento (Local)",
+		"slug": "knowledge_local",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Lendas, personalidades e tradições de uma região específica."
+	},
+	{
+		"name": "Conhecimento (Natureza)",
+		"slug": "knowledge_nature",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Animais, fadas, plantas, estações e ciclos naturais."
+	},
+	{
+		"name": "Conhecimento (Nobreza e Realeza)",
+		"slug": "knowledge_nobility",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Linhagens, heráldica, leis e costumes da corte."
+	},
+	{
+		"name": "Conhecimento (Planos)",
+		"slug": "knowledge_planes",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Planos interiores e exteriores, magia planar e extra-planares."
+	},
+	{
+		"name": "Conhecimento (Religião)",
+		"slug": "knowledge_religion",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Deuses, mortos-vivos, mitos e símbolos sagrados."
+	},
+	{
+		"name": "Conhecimento (Masmorras)",
+		"slug": "knowledge_dungeoneering",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Aberrações, cavernas, espeleologia e limos."
+	},
+	{
+		"name": "Cura",
+		"slug": "heal",
+		"attribute": "wis",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Estabilizar moribundos, tratar ferimentos e doenças."
+	},
+	{
+		"name": "Decifrar Escrita",
+		"slug": "decipher_script",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Entender escritas antigas, códigos ou idiomas desconhecidos."
+	},
+	{
+		"name": "Diplomacia",
+		"slug": "diplomacy",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Persuadir, negociar e mudar a atitude de PdMs."
+	},
+	{
+		"name": "Disfarces",
+		"slug": "disguise",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Mudar a aparência para se passar por outra pessoa."
+	},
+	{
+		"name": "Equilíbrio",
+		"slug": "balance",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Caminhar em superfícies precárias ou estreitas."
+	},
+	{
+		"name": "Escalar",
+		"slug": "climb",
+		"attribute": "str",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Subir paredes, encostas ou árvores."
+	},
+	{
+		"name": "Esconder-se",
+		"slug": "hide",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Manter-se fora de vista. Geralmente oposto a Observar."
+	},
+	{
+		"name": "Falar Idioma",
+		"slug": "speak_language",
+		"attribute": "none",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Aprender um novo idioma (não exige teste, apenas graduações)."
+	},
+	{
+		"name": "Falsificação",
+		"slug": "forgery",
+		"attribute": "int",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Criar ou detectar documentos falsos."
+	},
+	{
+		"name": "Furtividade",
+		"slug": "move_silently",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Mover-se sem fazer barulho. Geralmente oposto a Ouvir."
+	},
+	{
+		"name": "Identificar Magia",
+		"slug": "spellcraft",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Identificar magias sendo conjuradas ou propriedades mágicas."
+	},
+	{
+		"name": "Intimidação",
+		"slug": "intimidate",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Assustar ou coagir alguém a fazer o que você quer."
+	},
+	{
+		"name": "Natação",
+		"slug": "swim",
+		"attribute": "str",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Nadar em águas calmas ou agitadas. Penalidade de armadura conta em dobro."
+	},
+	{
+		"name": "Observar",
+		"slug": "spot",
+		"attribute": "wis",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Notar coisas visualmente, ver inimigos escondidos."
+	},
+	{
+		"name": "Obter Informação",
+		"slug": "gather_information",
+		"attribute": "cha",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Coletar boatos, fofocas e informações locais."
+	},
+	{
+		"name": "Ofícios",
+		"slug": "craft",
+		"attribute": "int",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Criar itens (armas, armaduras, alquimia, etc)."
+	},
+	{
+		"name": "Operar Mecanismo",
+		"slug": "disable_device",
+		"attribute": "int",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Desarmar armadilhas, abrir fechaduras complexas, sabotar mecanismos."
+	},
+	{
+		"name": "Ouvir",
+		"slug": "listen",
+		"attribute": "wis",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Notar barulhos, escutar conversas ou inimigos furtivos."
+	},
+	{
+		"name": "Prestidigitação",
+		"slug": "sleight_of_hand",
+		"attribute": "dex",
+		"trained_only": true,
+		"armor_check_penalty": true,
+		"description": "Bater carteiras, esconder objetos na mão, realizar truques manuais."
+	},
+	{
+		"name": "Procurar",
+		"slug": "search",
+		"attribute": "int",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Examinar ativamente uma área por portas secretas ou armadilhas."
+	},
+	{
+		"name": "Profissão",
+		"slug": "profession",
+		"attribute": "wis",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Exercer um ofício que exija mais sabedoria que destreza manual (marinheiro, cozinheiro, etc)."
+	},
+	{
+		"name": "Saltar",
+		"slug": "jump",
+		"attribute": "str",
+		"trained_only": false,
+		"armor_check_penalty": true,
+		"description": "Saltar distâncias horizontais ou verticais."
+	},
+	{
+		"name": "Sentir Motivação",
+		"slug": "sense_motive",
+		"attribute": "wis",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Detectar mentiras, intuir intenções, perceber encantamentos."
+	},
+	{
+		"name": "Sobrevivência",
+		"slug": "survival",
+		"attribute": "wis",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Rastrear, caçar, evitar perigos naturais."
+	},
+	{
+		"name": "Usar Cordas",
+		"slug": "use_rope",
+		"attribute": "dex",
+		"trained_only": false,
+		"armor_check_penalty": false,
+		"description": "Dar nós, amarrar prisioneiros, usar arpéus."
+	},
+	{
+		"name": "Usar Instrumento Mágico",
+		"slug": "use_magic_device",
+		"attribute": "cha",
+		"trained_only": true,
+		"armor_check_penalty": false,
+		"description": "Ativar varinhas e pergaminhos restritos a outras classes/raças."
+	}
+]

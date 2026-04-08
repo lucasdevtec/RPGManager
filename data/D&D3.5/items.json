@@ -1,0 +1,23 @@
+[
+	{
+		"name": "Mochila",
+		"slug": "mochila",
+		"cost": "2 PO",
+		"weight": 1,
+		"description": "Capacidade para carregar seus pertences."
+	},
+	{
+		"name": "Pederneira e Isqueiro",
+		"slug": "pederneira",
+		"cost": "1 PO",
+		"weight": 0,
+		"description": "Necessário para acender fogueiras ou tochas."
+	},
+	{
+		"name": "Ração de Viagem (1 dia)",
+		"slug": "racao-viagem",
+		"cost": "5 PP",
+		"weight": 0.5,
+		"description": "Comida desidratada para aventureiros."
+	}
+]

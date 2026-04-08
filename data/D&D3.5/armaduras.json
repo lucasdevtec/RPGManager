@@ -1,0 +1,28 @@
+[
+	{
+		"name": "Couro Batido",
+		"slug": "couro-batido",
+		"type": "Leve",
+		"cost": "25 PO",
+		"ac_bonus": 3,
+		"max_dex": 5,
+		"check_penalty": -1,
+		"spell_failure": 15,
+		"speed_30ft": "9 m",
+		"weight": 10,
+		"description": "Feita de couro rígido reforçado com rebites de metal."
+	},
+	{
+		"name": "Peitoral de Aço",
+		"slug": "peitoral-aco",
+		"type": "Média",
+		"cost": "200 PO",
+		"ac_bonus": 5,
+		"max_dex": 3,
+		"check_penalty": -4,
+		"spell_failure": 25,
+		"speed_30ft": "6 m",
+		"weight": 15,
+		"description": "Uma peça única de metal que cobre o tórax."
+	}
+]

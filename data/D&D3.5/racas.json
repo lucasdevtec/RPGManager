@@ -1,0 +1,463 @@
+[
+	{
+		"name": "Halfling",
+		"slug": "halfling",
+		"size": "Pequeno",
+		"speed": 6,
+		"abilityBonuses": {
+			"dex": 2,
+			"str": -2
+		},
+		"favoredClass": "Ladino",
+		"languages": {
+			"automatic": ["Comum", "Halfling"],
+			"bonus": ["Anão", "Élfico", "Gnomo", "Goblin", "Orc"]
+		},
+		"traits": [
+			{
+				"name": "Tamanho Pequeno",
+				"effect": "+1 na CA, +1 no Ataque, +4 em Esconder-se. Armas menores e carga reduzida (3/4).",
+				"bonuses": {
+					"ac_size": 1,
+					"attack_size": 1,
+					"skill": "hide",
+					"value": 4,
+					"carrying_capacity_multiplier": 0.75
+				}
+			},
+			{
+				"name": "Sorte de Halfling",
+				"effect": "+1 racial em todos os testes de resistência.",
+				"bonuses": {
+					"save": "all",
+					"value": 1
+				}
+			},
+			{
+				"name": "Destemor",
+				"effect": "+2 de moral contra medo (acumula com a Sorte de Halfling).",
+				"bonuses": {
+					"save": "will",
+					"value": 2,
+					"condition": "contra medo"
+				}
+			},
+			{
+				"name": "Atletismo Halfling",
+				"effect": "+2 racial em Escalar, Saltar e Furtividade.",
+				"bonuses": [
+					{ "skill": "climb", "value": 2 },
+					{ "skill": "jump", "value": 2 },
+					{ "skill": "move_silently", "value": 2 }
+				]
+			},
+			{
+				"name": "Mestre de Arremesso",
+				"effect": "+1 racial nas jogadas de ataque com armas de arremesso e fundas.",
+				"bonuses": {
+					"attack": 1,
+					"condition": "armas de arremesso e fundas"
+				}
+			},
+			{
+				"name": "Audição Aguçada",
+				"effect": "+2 racial em testes de Ouvir.",
+				"bonuses": {
+					"skill": "listen",
+					"value": 2
+				}
+			}
+		]
+	},
+	{
+		"name": "Anão",
+		"slug": "dwarf",
+		"size": "Médio",
+		"speed": 6,
+		"abilityBonuses": {
+			"con": 2,
+			"cha": -2
+		},
+		"favoredClass": "Guerreiro",
+		"languages": {
+			"automatic": ["Comum", "Anão"],
+			"bonus": ["Gigante", "Gnomo", "Goblin", "Orc", "Terran", "Subterrâneo"]
+		},
+		"senses": [
+			{
+				"name": "Visão no Escuro",
+				"range": 18,
+				"unit": "metros"
+			}
+		],
+		"proficiencies": {
+			"weapons": ["Machado de guerra anão", "Urgrosh anão"]
+		},
+		"traits": [
+			{
+				"name": "Deslocamento de Anão",
+				"effect": "O deslocamento não é reduzido por armaduras médias, pesadas ou carga.",
+				"type": "movement"
+			},
+			{
+				"name": "Ligação com Pedras",
+				"effect": "+2 em Procurar (alvenaria). Intuição de profundidade. Pode procurar ativamente ao passar a 3m.",
+				"bonuses": {
+					"skill": "search",
+					"value": 2,
+					"condition": "trabalhos em pedra/alvenaria"
+				}
+			},
+			{
+				"name": "Estabilidade",
+				"effect": "+4 em testes para resistir a encontrão ou imobilização quando em chão firme.",
+				"bonuses": {
+					"combat_maneuver_defense": 4,
+					"condition": "apenas em chão firme"
+				}
+			},
+			{
+				"name": "Resistência a Venenos",
+				"effect": "+2 racial em testes de resistência contra venenos.",
+				"bonuses": {
+					"save": "fortitude",
+					"value": 2,
+					"condition": "contra venenos"
+				}
+			},
+			{
+				"name": "Resistência à Magia",
+				"effect": "+2 racial em testes de resistência contra magias e efeitos similares.",
+				"bonuses": {
+					"save": "all",
+					"value": 2,
+					"condition": "contra magias"
+				}
+			},
+			{
+				"name": "Treinamento em Combate (Orcs/Goblinoides)",
+				"effect": "+1 nas jogadas de ataque contra orcs e goblinoides.",
+				"bonuses": {
+					"attack": 1,
+					"condition": "Orcs, Goblins, Hobgoblins, Bugbears"
+				}
+			},
+			{
+				"name": "Treinamento Defensivo (Gigantes)",
+				"effect": "+4 na CA (esquiva) contra monstros do tipo gigante.",
+				"bonuses": {
+					"ac_dodge": 4,
+					"condition": "Gigantes"
+				}
+			},
+			{
+				"name": "Especialista em Pedra e Metal",
+				"effect": "+2 em Avaliação e Ofícios relacionados a pedra ou metal.",
+				"bonuses": [
+					{ "skill": "appraise", "value": 2, "condition": "pedra/metal" },
+					{ "skill": "craft", "value": 2, "condition": "pedra/metal" }
+				]
+			}
+		],
+		"Brief": "Os anões são famosos por sua eficiência militar, sua habilidade para resistir a castigos físicos e mágicos, seu conhecimento sobre os segredos da terra, seu trabalho árduo e sua capacidade de beber cerveja. Seus reinos misteriosos,escavados no interior das montanhas, são famosos pelos tesouros maravilhosos que a raça produz como presentes ou para o comércio",
+		"descriptions": {
+			"Personalidade": "Os anões hesitam em sorrir ou celebrar e suspeitam muito de estranhos, mas são generosos com os poucos indivíduos que adquirem sua confiança. Eles valorizam o ouro, as gemas, as jóias e os objetos de arte fabricados com esses materiais preciosos e muitos já sucumbiram à ambição. Eles não combatem de forma recatada ou temerária, mas com coragem, tenacidade e cautela. A raça possui um forte senso de justiça, que pode se transformar em uma sede de vingança infindável. Entre os gnomos, que são famosos por suas excelentes relações com os anões, é comum o seguinte ditado: “Se eu estiver mentindo, que eu enraiveça um anão”.",
+			"Descrição Física": "Os anões têm entre 1,30 m e 1,50 m de altura, mas seus corpos são muito largos e compactos; em geral, eles pesam o mesmo que os seres humanos. Os anões são ligeiramente mais altos e bem mais pesados que as anãs. Sua pele geralmente é marrom ou com uma tonalidade bronzeada e seus olhos sempre são escuros. Seus cabelos variam entre o preto, o cinza ou o castanho, quase sempre longo. Os anões valorizam bastante suas barbas e cuidam bem delas. Eles preferem estilos simples para seus cabelos, barbas e roupas. Atingem a fase adulta por volta dos 40 anos e podem viver mais de 400 anos.",
+			"Relações": "Os anões se relacionam bem com os gnomos e razoavelmente com os humanos, meio-elfos e halflings. Eles costumam dizer: “a diferença entre um conhecido e um amigo equivale a cerca de cem anos”. Os humanos, com suas vidas curtas, encontram dificuldades em forjar vínculos mais profundos com os anões. As melhores relações entre as duas raças acontecem quando o anão gostava dos pais ou avós do humano. Os anões não conseguem apreciar a sutileza e a arte dos elfos, considerando-os imprevisíveis, inconstantes e excêntricos. Ainda assim, durante as eras, os elfos adquiriram o respeito dos anões quando combateram juntos os orcs, os goblins e os gnolls. Os anões desconfiam dos meio-orcs, que também desconfiam deles. Por sorte, os anões são justos e concedem aos meio-orcs a oportunidade individual de provarem seu valor.",
+			"Tendência": "Os anões geralmente são Leais e a raça tende ao Bem. Os aventureiros são mais propensos a se diferenciar do padrão, pois costumam ser os indivíduos que não se adaptaram perfeitamente à sua própria sociedade.",
+			"Terras dos Anões": "Quase sempre, os reinos dos anões estão localizados nas profundezas, abaixo das superfícies rochosas das montanhas, de onde a raça extrai gemas e metais preciosos e forja seus trabalhos fabulosos. Os membros dignos de confiança das outras raças são bem-vindos, mas existem restrições a algumas áreas. Qualquer riqueza inexistente na montanha é obtida através do comércio. Os anões não gostam de viajar na água, portanto os humanos mais empreendedores com freqüência são responsáveis pelo comércio dos bens dos anões quando a viagem exige uma rota fluvial ou marítima. Os anões que vivem nas terras dos humanos são mercenários, armeiros, joalheiros e artesãos. Os guarda-costas da raça são famosos por sua coragem e lealdade, e essas virtudes são muito bem remuneradas.",
+			"Religião": " A divindade suprema dos anões é Moradin, o Forjador da Alma. Ele é o criador dos anões e espera que seus seguidores se esforcem para melhorar a raça.",
+			"Idioma": "Os anões falam o idioma Anão, que possui seu próprio alfabeto rúnico. A literatura desta raça é marcada pela história detalhada de reinos e guerras através dos milênios. O alfabeto Anão também é usado (com pequenas variações) pelos idiomas Gnomo, Gigante, Goblin, Orc e Terran. Normalmente, os anões falam o idioma dos seus aliados (humanos e gnomos), mas também dos seus inimigos. Alguns também aprendem Terran, a estranha linguagem utilizada pelas criaturas da terra, como os xorns.",
+			"Nomes": "De acordo com a tradição, o nome de um anão é concedido pelo ancião de seu clã.Todos os nomes adequados para essa raça já foram utilizados e reutilizados através das gerações. O nome de um anão não lhe pertence, mas ao seu clã. Se ele utilizar mal ou envergonhar esse nome, seu clã poderá retirá-lo. Um anão que perdeu seu nome é proibido, pela lei dos anões, de usar qualquer outro nome da raça.",
+			"Aventuras": "Um aventureiro anão poderia ser motivado por uma cruzada, por amor ao risco ou simplesmente pela cobiça. Enquanto suas realizações trouxerem honra para o clã, seus feitos serão capazes de torná-lo um membro respeitado e reconhecido. Derrotar gigantes e obter armas mágicas poderosas são métodos comuns de acumular respeito entre seus semelhantes."
+		}
+	},
+	{
+		"name": "Elfo",
+		"slug": "elf",
+		"size": "Médio",
+		"speed": 9,
+		"abilityBonuses": {
+			"dex": 2,
+			"con": -2
+		},
+		"favoredClass": "Mago",
+		"languages": {
+			"automatic": ["Comum", "Élfico"],
+			"bonus": ["Dracônico", "Gnoll", "Gnomo", "Goblin", "Orc", "Silvestre"]
+		},
+		"senses": [
+			{
+				"name": "Visão na Penumbra",
+				"effect": "Enxerga duas vezes mais longe que humanos em condições de pouca luz.",
+				"multiplier": 2
+			}
+		],
+		"proficiencies": {
+			"weapons": ["Espada longa", "Sabre", "Arco longo", "Arco longo composto", "Arco curto", "Arco curto composto"]
+		},
+		"traits": [
+			{
+				"name": "Imunidade Élfica",
+				"effect": "Imunidade a magias e efeitos de sono.",
+				"immunities": ["sono", "magias de sono"]
+			},
+			{
+				"name": "Resistência a Encantamento",
+				"effect": "+2 racial em testes de resistência contra magias ou efeitos de Encantamento.",
+				"bonuses": {
+					"save": "all",
+					"value": 2,
+					"school": "enchantment",
+					"condition": "magias e efeitos similares"
+				}
+			},
+			{
+				"name": "Sentidos Aguçados",
+				"effect": "+2 racial em testes de Ouvir, Procurar e Observar.",
+				"bonuses": [
+					{ "skill": "listen", "value": 2 },
+					{ "skill": "search", "value": 2 },
+					{ "skill": "spot", "value": 2 }
+				]
+			},
+			{
+				"name": "Faro para Portas Secretas",
+				"effect": "Direito a um teste de Procurar automático se passar a 1,5m de uma porta secreta ou escondida.",
+				"mechanic": {
+					"type": "passive_check",
+					"name": "Portas Secretas",
+					"skill": "search",
+					"range": 1.5
+				}
+			}
+		]
+	},
+	{
+		"name": "Gnomo",
+		"slug": "gnome",
+		"size": "Pequeno",
+		"speed": 6,
+		"abilityBonuses": {
+			"con": 2,
+			"str": -2
+		},
+		"favoredClass": "Bardo",
+		"languages": {
+			"automatic": ["Comum", "Gnomo"],
+			"bonus": ["Dracônico", "Anão", "Élfico", "Gigante", "Goblin", "Orc"],
+			"special": "Comunicação com mamíferos terrestres (via magia)"
+		},
+		"senses": [
+			{
+				"name": "Visão na Penumbra",
+				"effect": "Enxerga duas vezes mais longe que humanos em condições de pouca luz.",
+				"multiplier": 2
+			}
+		],
+		"proficiencies": {
+			"weapons": ["Martelo gnomo com gancho"]
+		},
+		"spell_like_abilities": [
+			{
+				"name": "Falar com Animais",
+				"spells": ["speak_with_animals"],
+				"uses_per_day": 1,
+				"caster_level": 1,
+				"condition": "Somente mamíferos terrestres (toupeiras, texugos, etc)"
+			},
+			{
+				"name": "Truques de Gnomo",
+				"spells": ["dancing_lights", "ghost_sound", "prestidigitation"],
+				"uses_per_day": 1,
+				"caster_level": 1,
+				"condition": "Requer Carisma 10 ou superior"
+			}
+		],
+		"traits": [
+			{
+				"name": "Tamanho Pequeno",
+				"effect": "+1 na CA, +1 no Ataque, +4 em Esconder-se. Armas menores e carga reduzida (3/4).",
+				"bonuses": {
+					"ac_size": 1,
+					"attack_size": 1,
+					"skill": "hide",
+					"value": 4,
+					"carrying_capacity_multiplier": 0.75
+				}
+			},
+			{
+				"name": "Resistência a Ilusões",
+				"effect": "+2 racial em testes de resistência contra ilusões.",
+				"bonuses": {
+					"save": "all",
+					"value": 2,
+					"school": "illusion",
+					"condition": "contra ilusões"
+				}
+			},
+			{
+				"name": "Ilusionista Nato",
+				"effect": "+1 na CD (Dificuldade) das magias de ilusão conjuradas pelo gnomo.",
+				"bonuses": {
+					"spell_dc": 1,
+					"school": "illusion"
+				}
+			},
+			{
+				"name": "Treinamento de Combate (Kobolds/Goblinoides)",
+				"effect": "+1 nas jogadas de ataque contra kobolds e goblinoides.",
+				"bonuses": {
+					"attack": 1,
+					"condition": "Kobolds, Goblins, Hobgoblins, Bugbears"
+				}
+			},
+			{
+				"name": "Treinamento Defensivo (Gigantes)",
+				"effect": "+4 na CA (esquiva) contra monstros do tipo gigante.",
+				"bonuses": {
+					"ac_dodge": 4,
+					"condition": "Gigantes"
+				}
+			},
+			{
+				"name": "Sentidos e Olfato",
+				"effect": "+2 em Ouvir e +2 em Ofícios (Alquimia).",
+				"bonuses": [
+					{ "skill": "listen", "value": 2 },
+					{ "skill": "craft_alchemy", "value": 2 }
+				]
+			}
+		]
+	},
+	{
+		"name": "Humano",
+		"slug": "human",
+		"size": "Médio",
+		"speed": 9,
+		"abilityBonuses": {},
+		"favoredClass": "Qualquer",
+		"languages": {
+			"automatic": ["Comum"],
+			"bonus": ["Qualquer"],
+			"condition": "Exceto linguagens secretas (como Druídico)"
+		},
+		"traits": [
+			{
+				"name": "Versatilidade Humana (Talento)",
+				"effect": "1 talento adicional no 1° nível.",
+				"mechanic": {
+					"type": "extra_feat",
+					"value": 1,
+					"level": 1
+				}
+			},
+			{
+				"name": "Versatilidade Humana (Perícias)",
+				"effect": "4 pontos de perícia adicionais no 1° nível e 1 ponto adicional a cada nível subsequente.",
+				"mechanic": {
+					"type": "skill_point_bonus",
+					"formula": {
+						"level_1": 4,
+						"per_level": 1
+					}
+				}
+			}
+		]
+	},
+	{
+		"name": "Meio-Elfo",
+		"slug": "half-elf",
+		"size": "Médio",
+		"speed": 9,
+		"abilityBonuses": {},
+		"favoredClass": "Qualquer",
+		"languages": {
+			"automatic": ["Comum", "Élfico"],
+			"bonus": ["Qualquer"],
+			"condition": "Exceto linguagens secretas (como Druídico)"
+		},
+		"senses": [
+			{
+				"name": "Visão na Penumbra",
+				"effect": "Enxerga duas vezes mais longe que humanos em condições de pouca luz.",
+				"multiplier": 2
+			}
+		],
+		"traits": [
+			{
+				"name": "Sangue Élfico",
+				"effect": "Considerado um elfo para todos os efeitos relacionados à raça (como usar itens mágicos exclusivos).",
+				"mechanic": {
+					"type": "count_as_race",
+					"race_slug": "elf"
+				}
+			},
+			{
+				"name": "Imunidade Élfica",
+				"effect": "Imunidade a magias e efeitos de sono.",
+				"immunities": ["sono", "magias de sono"]
+			},
+			{
+				"name": "Resistência a Encantamento",
+				"effect": "+2 racial em testes de resistência contra magias ou efeitos de Encantamento.",
+				"bonuses": {
+					"save": "all",
+					"value": 2,
+					"school": "enchantment",
+					"condition": "magias e efeitos similares"
+				}
+			},
+			{
+				"name": "Sentidos Aguçados (Herdado)",
+				"effect": "+1 racial em testes de Ouvir, Procurar e Observar.",
+				"bonuses": [
+					{ "skill": "listen", "value": 1 },
+					{ "skill": "search", "value": 1 },
+					{ "skill": "spot", "value": 1 }
+				]
+			},
+			{
+				"name": "Sociabilidade",
+				"effect": "+2 racial em testes de Diplomacia e Obter Informação.",
+				"bonuses": [
+					{ "skill": "diplomacy", "value": 2 },
+					{ "skill": "gather_information", "value": 2 }
+				]
+			}
+		]
+	},
+	{
+		"name": "Meio-Orc",
+		"slug": "half-orc",
+		"size": "Médio",
+		"speed": 9,
+		"abilityBonuses": {
+			"str": 2,
+			"int": -2,
+			"cha": -2
+		},
+		"favoredClass": "Bárbaro",
+		"languages": {
+			"automatic": ["Comum", "Orc"],
+			"bonus": ["Dracônico", "Gigante", "Gnoll", "Goblin", "Abissal"]
+		},
+		"senses": [
+			{
+				"name": "Visão no Escuro",
+				"range": 18,
+				"unit": "metros"
+			}
+		],
+		"traits": [
+			{
+				"name": "Sangue Orc",
+				"effect": "Considerado um orc para todos os efeitos relacionados à raça (como usar itens mágicos exclusivos de orcs).",
+				"mechanic": {
+					"type": "count_as_race",
+					"race_slug": "orc"
+				}
+			}
+		]
+	}
+]
